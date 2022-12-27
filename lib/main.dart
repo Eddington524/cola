@@ -43,7 +43,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int index = 0;
-  List<Widget> pagesArr = [FirstPage(), SecondPage(), ThirdPage(), ForthPage(), FifthPage()];
+  List<Widget> pagesArr = [HomePage(), SecondPage(), ThirdPage(), ForthPage(), FifthPage()];
 
   @override
   Widget build(BuildContext context) {
