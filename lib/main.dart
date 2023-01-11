@@ -1,4 +1,4 @@
-import 'package:cola/pages/addpage.dart';
+import 'package:cola/pages/plus_page.dart';
 import 'package:cola/pages/alarm.dart';
 import 'package:cola/pages/home.dart';
 import 'package:cola/pages/land.dart';
@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
-        //
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
         // changing the primarySwatch below to Colors.green and then invoke
@@ -43,7 +42,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int index = 0;
-  List<Widget> pagesArr = [HomePage(), SecondPage(), ThirdPage(), ForthPage(), FifthPage()];
+  List<Widget> pagesArr = [HomePage(), LandPage(), PlusPage(), AlarmPage(), MyInfoPage()];
 
   @override
   Widget build(BuildContext context) {

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class ForthPage extends StatefulWidget {
-  const ForthPage({Key? key}) : super(key: key);
+class AlarmPage extends StatefulWidget {
+  const AlarmPage({Key? key}) : super(key: key);
 
   @override
-  State<ForthPage> createState() => _ForthPageState();
+  State<AlarmPage> createState() => _AlarmPageState();
 }
 
-class _ForthPageState extends State<ForthPage> {
+class _AlarmPageState extends State<AlarmPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.orange,
+      color: Colors.green,
     );
   }
 }

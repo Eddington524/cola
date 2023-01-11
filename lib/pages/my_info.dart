@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class FifthPage extends StatefulWidget {
-  const FifthPage({Key? key}) : super(key: key);
+class MyInfoPage extends StatefulWidget {
+  const MyInfoPage({Key? key}) : super(key: key);
 
   @override
-  State<FifthPage> createState() => _FifthPageState();
+  State<MyInfoPage> createState() => _MyInfoPageState();
 }
 
-class _FifthPageState extends State<FifthPage> {
+class _MyInfoPageState extends State<MyInfoPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.orange,
+      color: Colors.pinkAccent,
     );
   }
 }
