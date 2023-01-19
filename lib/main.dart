@@ -1,8 +1,8 @@
-import 'package:cola/pages/plus_page.dart';
-import 'package:cola/pages/alarm.dart';
-import 'package:cola/pages/home.dart';
-import 'package:cola/pages/land.dart';
-import 'package:cola/pages/my_info.dart';
+import 'package:cola/pages/plus/plus_page.dart';
+import 'package:cola/pages/alarm/alarm.dart';
+import 'package:cola/pages/home/home.dart';
+import 'package:cola/pages/land/land.dart';
+import 'package:cola/pages/myinfo/my_info.dart';
 import 'package:flutter/material.dart';
 
 void main() {
