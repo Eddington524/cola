@@ -3,7 +3,6 @@ import 'package:cola/pages/home/tab/item.dart';
 import 'package:cola/pages/home/tab/town.dart';
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -13,36 +12,43 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late TabController _nestedTabController;
+
   // _ private 변수 같은 클래스 내에서만 사용가능?
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
-   _nestedTabController = TabController(length: 3, vsync: this);
+    _nestedTabController = TabController(length: 3, vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        title: Container(
-          width: 350,
-          height: 50,
-            padding: EdgeInsets.only(left: 20),
-            // color: Colors.grey,
-            decoration: BoxDecoration(
-              color: Colors.black12,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Row(
-              children: [
-                Icon(Icons.search, size: 30 ),
-                // TextField(),
-              ],
-            ))
-      ),
+          elevation: 0,
+          backgroundColor: Colors.white,
+          title: Container(
+              width: 350,
+              height: 50,
+              padding: EdgeInsets.only(left: 20),
+              // color: Colors.grey,
+              decoration: BoxDecoration(
+                color: Colors.black12,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Row(
+                children: const [
+                  Icon(Icons.search, size: 30),
+                  Expanded(
+                      child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          hintText: "검색어를 입력해주세요", border: InputBorder.none),
+                    ),
+                  )),
+                ],
+              ))),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
@@ -64,13 +70,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
             ],
           ),
-          Expanded(child: TabBarView(
+          Expanded(
+              child: TabBarView(
             controller: _nestedTabController,
-            children: const [
-              TownScreen(),
-              ItemScreen(),
-              FollowScreen()
-            ],
+            children: const [TownScreen(), ItemScreen(), FollowScreen()],
           ))
         ],
       ),
