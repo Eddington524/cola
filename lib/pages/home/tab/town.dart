@@ -1,3 +1,4 @@
+import 'package:cola/widget/trend_item.dart';
 import 'package:flutter/material.dart';
 
 class TownScreen extends StatefulWidget {
@@ -17,11 +18,12 @@ class _TownScreenState extends State<TownScreen> {
           alignment: Alignment.center,
           child: Column(
             children: [
+              //베너
               Container(
                   height: 180,
                   child: Column(
                     children: [
-                      Container(
+                      SizedBox(
                           height: 150,
                           child: Stack(
                             fit: StackFit.expand,
@@ -36,21 +38,19 @@ class _TownScreenState extends State<TownScreen> {
                                       fit: BoxFit.fill),
                                 ),
                               ),
-                              Container(
-                                child: Align(
-                                  alignment: Alignment.topCenter,
-                                  child: Container(
-                                    width: 20,
-                                    height: 20,
-                                    color: Colors.purple,
-                                  ),
+                              Align(
+                                alignment: Alignment.topCenter,
+                                child: Container(
+                                  width: 20,
+                                  height: 20,
+                                  color: Colors.purple,
                                 ),
                               )
                             ],
                           )),
                       Expanded(
                           child: Container(
-                        color: Colors.green,
+                        child: Text('.......'),
                       ))
                     ],
                   )),
@@ -59,74 +59,60 @@ class _TownScreenState extends State<TownScreen> {
                 child: Column(
                   children: [
                     /// text 묶음
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              "sam1",
-                              style:
-                                  TextStyle(color: Colors.orange, fontSize: 25),
-                            ),
-                            Text("님을 위한", style: TextStyle(fontSize: 25))
-                          ],
-                        ),
-                        Text('트렌드 아이템',
-                            style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.w300))
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 5),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: const [
+                              Text(
+                                "sam1",
+                                style: TextStyle(
+                                    color: Colors.orange, fontSize: 25),
+                              ),
+                              Text("님을 위한", style: TextStyle(fontSize: 25))
+                            ],
+                          ),
+                          const Text('트렌드 아이템',
+                              style: TextStyle(
+                                  fontSize: 30, fontWeight: FontWeight.w300))
+                        ],
+                      ),
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         /// 왼쪽열
                         Expanded(
-                            flex: 1,
-                            child: Column(
-                              children: [
-                                ///card
-                                Column(
-                                  crossAxisAlignment:CrossAxisAlignment.start ,
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(10.0),
-                                      child: Image.network(
-                                          'https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/8809559749901.jpg',
-                                          fit: BoxFit.fill),
-                                    ),
-                                    Text('꽝 없는 뽑기?!😃'),
-                                    /// profile img + name
-                                    Row(
-                                      children: [
-                                        Container(
-                                          width: 20,
-                                          margin: EdgeInsets.only(right: 5),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(50.0),
-                                            child: Image.network(
-                                                'https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/8809559749901.jpg',
-                                                fit: BoxFit.fill),
-                                          ),
-                                        ),
-                                        Text("passbyme")
-                                      ],
-                                    ),
-                                    /// like, comment
-                                    Row(
-                                      children: [
-                                        Icon(Icons.favorite_border),
-                                        Text("8"),
-                                        Icon(Icons.comment_outlined),
-                                        Text("10"),
-                                      ],
-                                    )
-                                  ],
-                                )
-                              ],
-                            )),
-                        SizedBox(
+                          flex: 1,
+                          child: Column(
+                            children: const [
+                              ///card
+                              TrendItem(
+                                itemImgUrl:
+                                    'https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/8809559749901.jpg',
+                                itemName: '꽝 없는 뽑기?!😃',
+                                userImgUrl:
+                                    'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                userName: 'eddy',
+                                likeCount: 8,
+                                commentCount: 10,
+                              ),
+                              TrendItem(
+                                itemImgUrl:
+                                    'https://mblogthumb-phinf.pstatic.net/MjAyMjA1MzBfMjE3/MDAxNjUzOTEwOTMzNzgx.66CcW7EuR--tpmCqyvaFxE7bPaN4w4Why_IYDp1OP94g.JTg2pEvQIsDq0D_lqjUAvCweCPZMZGyCt_IG0JmV_00g.JPEG.dud8448/Screenshot%EF%BC%BF20220525%EF%BC%8D154010%EF%BC%BF10x10.jpg?type=w800',
+                                itemName: '꽝 없는 뽑기?!😃',
+                                userImgUrl:
+                                    'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                userName: 'eddy',
+                                likeCount: 8,
+                                commentCount: 10,
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
                           width: 20,
                         ),
 
@@ -134,25 +120,33 @@ class _TownScreenState extends State<TownScreen> {
                         Expanded(
                             flex: 1,
                             child: Column(
-                              children: [
+                              children: const [
                                 ///card
-                                Column(
-                                  children: [
-                                    Container(
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                        child: Image.network(
-                                            'https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/8809559749901.jpg',
-                                            fit: BoxFit.fill),
-                                      ),
-                                    ),
-                                  ],
-                                )
+                                TrendItem(
+                                  itemImgUrl:
+                                      'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
+                                  itemName: '고흐의 컵',
+                                  userImgUrl:
+                                      'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
+                                  userName: 'pengpeng',
+                                  likeCount: 100,
+                                  commentCount: 20,
+                                ),
+                                TrendItem(
+                                  itemImgUrl:
+                                      'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
+                                  itemName: '고흐의 컵',
+                                  userImgUrl:
+                                      'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
+                                  userName: 'pengpeng',
+                                  likeCount: 100,
+                                  commentCount: 20,
+                                ),
                               ],
-                            ))
+                            ),
+                        ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
