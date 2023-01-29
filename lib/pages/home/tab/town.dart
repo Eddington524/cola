@@ -281,22 +281,20 @@ class _TownScreenState extends State<TownScreen> {
                     Row(
                       children: [
                         ///태그 카드!
-                        Container(
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 110,
-                                height: 110,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  child: Image.network(
-                                      'https://m.gundamworks.com/web/product/big/202206/146d25b1ae038985390e3b0bca7ffc93.jpg'),
-                                ),
+                        Column(
+                          children: [
+                            SizedBox(
+                              width: 110,
+                              height: 110,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10.0),
+                                child: Image.network(
+                                    'https://m.gundamworks.com/web/product/big/202206/146d25b1ae038985390e3b0bca7ffc93.jpg'),
                               ),
-                              Text("우디"),
-                              Text('2341개의 게시글'),
-                            ],
-                          ),
+                            ),
+                            Text("우디"),
+                            Text('2341개의 게시글'),
+                          ],
                         )
                       ],
                     ),
@@ -334,7 +332,7 @@ class _TownScreenState extends State<TownScreen> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                         height: 400,
                         child: GridviewPage()),
                     /// 더보기 버튼
@@ -342,9 +340,79 @@ class _TownScreenState extends State<TownScreen> {
                       text: '트렌드 더보기',
                       isRightFlow: false,
                     ),
+                    const SizedBox(
+                      height: 10,
+                    )
                   ],
                 ),
               ),
+
+              /// 소식
+              Container(
+                color: Colors.white,
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                margin: const EdgeInsets.only(bottom: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    /// text 묶음
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5),
+                      child: Text('콜리포터가 전하는 소식', style: TextStyle(fontSize: 25),),
+                    ),
+                    Row(
+                      children: [
+                        // 인플루언서 영역
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 100,
+                              height: 100,
+                              // margin: EdgeInsets.only(right: 15),
+                              alignment: Alignment.center,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(50.0),
+                                child: Image.network(
+                                    'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                    fit: BoxFit.fill),
+                              ),
+                            ),
+                            Text('콜리포터'),
+                            Container(
+                              width: 60,
+                              height: 30,
+                              decoration: BoxDecoration(
+                                color: Colors.lightBlueAccent,
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text('팔로우', textAlign: TextAlign.center ,style: TextStyle(color: Colors.white),),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          width: 130,
+                          height: 130,
+                          margin: EdgeInsets.symmetric(horizontal: 5),
+                          ///todo  왼쪽 컨텐츠 사이즈에 딱 맞게!
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.network(
+                                'https://m.gundamworks.com/web/product/big/202206/146d25b1ae038985390e3b0bca7ffc93.jpg'),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+
             ],
           )),
     );
