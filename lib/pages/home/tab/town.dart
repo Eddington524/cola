@@ -1,3 +1,4 @@
+import 'package:cola/widget/gridview_page.dart';
 import 'package:cola/widget/more_button.dart';
 import 'package:cola/widget/trend_item.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class _TownScreenState extends State<TownScreen> {
           alignment: Alignment.center,
           child: Column(
             children: [
+
               ///베너
               Container(
                   padding: EdgeInsets.symmetric(horizontal: 20),
@@ -53,8 +55,8 @@ class _TownScreenState extends State<TownScreen> {
                           )),
                       Expanded(
                           child: Container(
-                        child: Text('.......'),
-                      ))
+                            child: Text('.......'),
+                          ))
                     ],
                   )),
 
@@ -66,6 +68,7 @@ class _TownScreenState extends State<TownScreen> {
                 margin: const EdgeInsets.only(bottom: 10),
                 child: Column(
                   children: [
+
                     /// text 묶음
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 5),
@@ -91,28 +94,30 @@ class _TownScreenState extends State<TownScreen> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+
                         /// 왼쪽열
                         Expanded(
                           flex: 1,
                           child: Column(
                             children: const [
+
                               ///card
                               TrendItem(
                                 itemImgUrl:
-                                    'https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/8809559749901.jpg',
+                                'https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/8809559749901.jpg',
                                 itemName: '꽝 없는 뽑기?!😃',
                                 userImgUrl:
-                                    'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                'https://avatars.githubusercontent.com/u/56524770?v=4',
                                 userName: 'eddy',
                                 likeCount: 8,
                                 commentCount: 10,
                               ),
                               TrendItem(
                                 itemImgUrl:
-                                    'https://mblogthumb-phinf.pstatic.net/MjAyMjA1MzBfMjE3/MDAxNjUzOTEwOTMzNzgx.66CcW7EuR--tpmCqyvaFxE7bPaN4w4Why_IYDp1OP94g.JTg2pEvQIsDq0D_lqjUAvCweCPZMZGyCt_IG0JmV_00g.JPEG.dud8448/Screenshot%EF%BC%BF20220525%EF%BC%8D154010%EF%BC%BF10x10.jpg?type=w800',
+                                'https://mblogthumb-phinf.pstatic.net/MjAyMjA1MzBfMjE3/MDAxNjUzOTEwOTMzNzgx.66CcW7EuR--tpmCqyvaFxE7bPaN4w4Why_IYDp1OP94g.JTg2pEvQIsDq0D_lqjUAvCweCPZMZGyCt_IG0JmV_00g.JPEG.dud8448/Screenshot%EF%BC%BF20220525%EF%BC%8D154010%EF%BC%BF10x10.jpg?type=w800',
                                 itemName: '꽝 없는 뽑기?!😃',
                                 userImgUrl:
-                                    'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                'https://avatars.githubusercontent.com/u/56524770?v=4',
                                 userName: 'eddy',
                                 likeCount: 8,
                                 commentCount: 10,
@@ -129,23 +134,24 @@ class _TownScreenState extends State<TownScreen> {
                           flex: 1,
                           child: Column(
                             children: const [
+
                               ///card
                               TrendItem(
                                 itemImgUrl:
-                                    'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
+                                'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
                                 itemName: '고흐의 컵',
                                 userImgUrl:
-                                    'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
+                                'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
                                 userName: 'pengpeng',
                                 likeCount: 100,
                                 commentCount: 20,
                               ),
                               TrendItem(
                                 itemImgUrl:
-                                    'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
+                                'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
                                 itemName: '고흐의 컵',
                                 userImgUrl:
-                                    'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
+                                'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
                                 userName: 'pengpeng',
                                 likeCount: 100,
                                 commentCount: 20,
@@ -193,6 +199,7 @@ class _TownScreenState extends State<TownScreen> {
                     ),
                     Row(
                       children: [
+
                         ///인기 플레이 카드!
                         Container(
                           decoration: BoxDecoration(
@@ -304,11 +311,11 @@ class _TownScreenState extends State<TownScreen> {
               ///마켓 영역
               Container(
                 color: Colors.white,
-                height: 750,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 margin: const EdgeInsets.only(bottom: 10),
                 child: Column(
                   children: [
+
                     /// text 묶음
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 5),
@@ -327,13 +334,14 @@ class _TownScreenState extends State<TownScreen> {
                         ],
                       ),
                     ),
-                    // todo grid 추가
-
+                    SizedBox(
+                        height: 400,
+                        child: GridviewPage()),
                     /// 더보기 버튼
                     const MoreButton(
                       text: '트렌드 더보기',
                       isRightFlow: false,
-                    )
+                    ),
                   ],
                 ),
               ),
