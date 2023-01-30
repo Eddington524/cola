@@ -19,7 +19,6 @@ class _TownScreenState extends State<TownScreen> {
           alignment: Alignment.center,
           child: Column(
             children: [
-
               ///베너
               Container(
                   padding: EdgeInsets.symmetric(horizontal: 20),
@@ -55,8 +54,8 @@ class _TownScreenState extends State<TownScreen> {
                           )),
                       Expanded(
                           child: Container(
-                            child: Text('.......'),
-                          ))
+                        child: Text('.......'),
+                      ))
                     ],
                   )),
 
@@ -68,7 +67,6 @@ class _TownScreenState extends State<TownScreen> {
                 margin: const EdgeInsets.only(bottom: 10),
                 child: Column(
                   children: [
-
                     /// text 묶음
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 5),
@@ -94,30 +92,28 @@ class _TownScreenState extends State<TownScreen> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-
                         /// 왼쪽열
                         Expanded(
                           flex: 1,
                           child: Column(
                             children: const [
-
                               ///card
                               TrendItem(
                                 itemImgUrl:
-                                'https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/8809559749901.jpg',
+                                    'https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/8809559749901.jpg',
                                 itemName: '꽝 없는 뽑기?!😃',
                                 userImgUrl:
-                                'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                    'https://avatars.githubusercontent.com/u/56524770?v=4',
                                 userName: 'eddy',
                                 likeCount: 8,
                                 commentCount: 10,
                               ),
                               TrendItem(
                                 itemImgUrl:
-                                'https://mblogthumb-phinf.pstatic.net/MjAyMjA1MzBfMjE3/MDAxNjUzOTEwOTMzNzgx.66CcW7EuR--tpmCqyvaFxE7bPaN4w4Why_IYDp1OP94g.JTg2pEvQIsDq0D_lqjUAvCweCPZMZGyCt_IG0JmV_00g.JPEG.dud8448/Screenshot%EF%BC%BF20220525%EF%BC%8D154010%EF%BC%BF10x10.jpg?type=w800',
+                                    'https://mblogthumb-phinf.pstatic.net/MjAyMjA1MzBfMjE3/MDAxNjUzOTEwOTMzNzgx.66CcW7EuR--tpmCqyvaFxE7bPaN4w4Why_IYDp1OP94g.JTg2pEvQIsDq0D_lqjUAvCweCPZMZGyCt_IG0JmV_00g.JPEG.dud8448/Screenshot%EF%BC%BF20220525%EF%BC%8D154010%EF%BC%BF10x10.jpg?type=w800',
                                 itemName: '꽝 없는 뽑기?!😃',
                                 userImgUrl:
-                                'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                    'https://avatars.githubusercontent.com/u/56524770?v=4',
                                 userName: 'eddy',
                                 likeCount: 8,
                                 commentCount: 10,
@@ -134,24 +130,23 @@ class _TownScreenState extends State<TownScreen> {
                           flex: 1,
                           child: Column(
                             children: const [
-
                               ///card
                               TrendItem(
                                 itemImgUrl:
-                                'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
+                                    'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
                                 itemName: '고흐의 컵',
                                 userImgUrl:
-                                'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
+                                    'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
                                 userName: 'pengpeng',
                                 likeCount: 100,
                                 commentCount: 20,
                               ),
                               TrendItem(
                                 itemImgUrl:
-                                'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
+                                    'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
                                 itemName: '고흐의 컵',
                                 userImgUrl:
-                                'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
+                                    'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
                                 userName: 'pengpeng',
                                 likeCount: 100,
                                 commentCount: 20,
@@ -199,7 +194,6 @@ class _TownScreenState extends State<TownScreen> {
                     ),
                     Row(
                       children: [
-
                         ///인기 플레이 카드!
                         Container(
                           decoration: BoxDecoration(
@@ -313,7 +307,6 @@ class _TownScreenState extends State<TownScreen> {
                 margin: const EdgeInsets.only(bottom: 10),
                 child: Column(
                   children: [
-
                     /// text 묶음
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 5),
@@ -328,13 +321,12 @@ class _TownScreenState extends State<TownScreen> {
                           ),
                           const Text('덕친마켓에서',
                               style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.w600))
+                                  fontSize: 25, fontWeight: FontWeight.w600))
                         ],
                       ),
                     ),
-                    Container(
-                        height: 400,
-                        child: GridviewPage()),
+                    Container(height: 400, child: GridviewPage()),
+
                     /// 더보기 버튼
                     const MoreButton(
                       text: '트렌드 더보기',
@@ -342,7 +334,7 @@ class _TownScreenState extends State<TownScreen> {
                     ),
                     const SizedBox(
                       height: 10,
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -358,7 +350,10 @@ class _TownScreenState extends State<TownScreen> {
                     /// text 묶음
                     const Padding(
                       padding: EdgeInsets.symmetric(vertical: 5),
-                      child: Text('콜리포터가 전하는 소식', style: TextStyle(fontSize: 25),),
+                      child: Text(
+                        '콜리포터가 전하는 소식',
+                        style: TextStyle(fontSize: 25),
+                      ),
                     ),
                     Row(
                       children: [
@@ -388,7 +383,11 @@ class _TownScreenState extends State<TownScreen> {
                               ),
                               child: const Padding(
                                 padding: EdgeInsets.all(8.0),
-                                child: Text('팔로우', textAlign: TextAlign.center ,style: TextStyle(color: Colors.white),),
+                                child: Text(
+                                  '팔로우',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white),
+                                ),
                               ),
                             ),
                           ],
@@ -400,11 +399,12 @@ class _TownScreenState extends State<TownScreen> {
                           width: 130,
                           height: 130,
                           margin: EdgeInsets.symmetric(horizontal: 5),
+
                           ///todo  왼쪽 컨텐츠 사이즈에 딱 맞게!
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: Image.network(
-                                'https://m.gundamworks.com/web/product/big/202206/146d25b1ae038985390e3b0bca7ffc93.jpg'),
+                                'https://image.yes24.com/images/chyes24/8/2/2/1/8221e0a47866a34b9126ac84c27d10b4.jpg', fit: BoxFit.cover,),
                           ),
                         ),
                       ],
@@ -413,6 +413,114 @@ class _TownScreenState extends State<TownScreen> {
                 ),
               ),
 
+              /// 데일리 아이템 랭킹
+              Container(
+                padding: EdgeInsets.fromLTRB(20, 0, 0, 20),
+                margin: EdgeInsets.only(bottom: 10),
+                color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 15),
+                    const Text(
+                      '데일리 아이템 랭킹',
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                    ),
+                    const Text('매일 1~5위에게 보너스 포인트 지급!'),
+                    Row(
+                      children: [
+                        /// 카드!
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Stack(
+                              alignment: Alignment.topLeft,
+                              children: [
+                                Container(
+                                  width: 230,
+                                  height: 230,
+                                  margin: EdgeInsets.only(top: 30),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                    child: Image.network(
+                                        'https://dimg.donga.com/wps/NEWS/IMAGE/2022/12/29/117210753.1.edit.jpg',
+                                        fit: BoxFit.cover),
+                                  ),
+                                ),
+                                Transform.rotate(
+                                  angle: -0.15,
+                                  child: Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      Icon(Icons.star,
+                                          shadows: <Shadow>[
+                                            Shadow(
+                                              color: Colors.black54,
+                                              blurRadius: 15.0,
+                                              offset: Offset.fromDirection(1),
+                                            ),
+                                          ],
+                                          size: 55,
+                                          color: Colors.white),
+                                      const Icon(Icons.star,
+                                          size: 47, color: Colors.greenAccent),
+                                      const Text('1'),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const SizedBox(height: 10),
+                                  const Text("슬램덩크 북산 포스터",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w600)),
+                                  const SizedBox(height: 10),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        width: 30,
+                                        height: 30,
+                                        alignment: Alignment.center,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(50.0),
+                                          child: Image.network(
+                                              'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                              fit: BoxFit.fill),
+                                        ),
+                                      ),
+                                      SizedBox(width: 7),
+                                      Text('backho')
+                                    ],
+                                  ),
+                                  Container(
+                                    width: 220,
+                                    height: 3,
+                                    margin: EdgeInsets.symmetric(vertical: 10),
+                                    color: Colors.grey.withOpacity(0.3),
+                                  ),
+                                  Text('좋아요 64개'),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    const MoreButton(
+                      text: '랭킹 더보기',
+                      isRightFlow: true,
+                    ),
+                  ],
+                ),
+              )
             ],
           )),
     );
