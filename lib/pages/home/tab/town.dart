@@ -339,10 +339,10 @@ class _TownScreenState extends State<TownScreen> {
                 ),
               ),
 
-              /// 소식
+              /// 소식 -
               Container(
                 color: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                 margin: const EdgeInsets.only(bottom: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -417,7 +417,48 @@ class _TownScreenState extends State<TownScreen> {
                 ),
               ),
 
-              /// 데일리 아이템 랭킹
+              /// 경매상품 영역 -
+              Container(
+                // padding: EdgeInsets.fromLTRB(20, 0, 0, 20),
+                // padding: EdgeInsets.only(left: 20, bottom: 20),
+                margin: EdgeInsets.only(bottom: 10),
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+                      child: Row(
+                        children: const [
+                          Text(
+                            '유저들이 함께하는',
+                            style: TextStyle(fontSize: 25),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            '경매 상품',
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.w600),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: const [
+                          AuctionItem(),
+                          /// 카드!
+                        ],
+                      ),
+                    ),
+                    MoreButton(text: "경매상품 더보기")
+                  ],
+                ),
+              ),
+
+              /// 데일리 아이템 랭킹 -
               Container(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 20),
                 margin: EdgeInsets.only(bottom: 10),
@@ -521,6 +562,298 @@ class _TownScreenState extends State<TownScreen> {
                     const MoreButton(
                       text: '랭킹 더보기',
                     ),
+                  ],
+                ),
+              ),
+
+              /// 기획전 영역
+              Container(
+                padding: EdgeInsets.fromLTRB(20, 0, 0, 20),
+                margin: EdgeInsets.only(bottom: 10),
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      child: Row(
+                        children: const [
+                          Text(
+                            '콜리샵 ',
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.w600),
+                          ),
+                          Text(
+                            '기획전',
+                            style: TextStyle(fontSize: 25),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Stack(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(bottom: 10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(45),
+                              ),
+                              child: SizedBox(
+                                width: 390,
+                                height: 410,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  child: Image.network(
+                                      'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.theqoo.net%2Fimg%2FHbqyL.jpg&type=sc960_832',
+                                      fit: BoxFit.cover),
+                                ),
+                              ),
+                            ),
+
+                            /// 타이머 영역
+                            Transform.translate(
+                              offset: Offset(0, 360),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    width: 40,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black26.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: const [
+                                        Text(
+                                          '01',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 15),
+                                        ),
+                                        Text(
+                                          '일',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 10),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+
+                                  /// : 컨테이너
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 5),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          width: 5,
+                                          height: 5,
+                                          decoration: BoxDecoration(
+                                            color:
+                                                Colors.black26.withOpacity(0.2),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 5,
+                                        ),
+                                        Container(
+                                          width: 5,
+                                          height: 5,
+                                          decoration: BoxDecoration(
+                                            color:
+                                                Colors.black26.withOpacity(0.2),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 50,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black26.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: const [
+                                        Text(
+                                          '06',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 15),
+                                        ),
+                                        Text(
+                                          '시간',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 10),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+
+                                  /// : 컨테이너
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 5),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          width: 5,
+                                          height: 5,
+                                          decoration: BoxDecoration(
+                                            color:
+                                                Colors.black26.withOpacity(0.2),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Container(
+                                          width: 5,
+                                          height: 5,
+                                          decoration: BoxDecoration(
+                                            color:
+                                                Colors.black26.withOpacity(0.2),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 40,
+                                    height: 30,
+                                    margin: EdgeInsets.only(right: 10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.black26.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: const [
+                                        Text(
+                                          '43',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 15),
+                                        ),
+                                        Text(
+                                          '분',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 10),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          height: 100,
+                          margin: EdgeInsets.only(bottom: 20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('콜리'),
+                              const Text(
+                                '에스더버니 무드등 가습기',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.w600),
+                              ),
+                              // 가격행
+                              Row(
+                                children: const [
+                                  Text('44%',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.orangeAccent,
+                                          fontWeight: FontWeight.w600)),
+                                  Text("14,700원",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w600)),
+                                  Text("21,000원",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.black26,
+                                          decoration:
+                                              TextDecoration.lineThrough,
+                                          fontWeight: FontWeight.w500))
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    width: 15,
+                                    height: 15,
+                                    decoration: BoxDecoration(
+                                      color: Colors.redAccent,
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
+                                    child: const Text(
+                                      'N',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                  Container(
+                                      width: 65,
+                                      height: 15,
+                                      decoration: BoxDecoration(
+                                        color: Colors.lightBlueAccent,
+                                        borderRadius:
+                                            BorderRadius.circular(4.0),
+                                      ),
+                                      child: const Text(
+                                        'only 콜리',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(color: Colors.white),
+                                      )),
+                                  Container(
+                                    width: 65,
+                                    height: 15,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
+                                    child: const Text(
+                                      '사전예약',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(color: Colors.black38),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    MoreButton(text: "경매상품 더보기")
                   ],
                 ),
               )
