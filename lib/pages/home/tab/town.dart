@@ -160,7 +160,6 @@ class _TownScreenState extends State<TownScreen> {
                     /// 더보기 버튼
                     const MoreButton(
                       text: '트렌드 더보기',
-                      isRightFlow: false,
                     )
                   ],
                 ),
@@ -251,7 +250,7 @@ class _TownScreenState extends State<TownScreen> {
 
               ///태그추천 영역
               Container(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 20),
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
                 margin: EdgeInsets.only(bottom: 10),
                 color: Colors.white,
                 child: Column(
@@ -294,7 +293,6 @@ class _TownScreenState extends State<TownScreen> {
                     ),
                     const MoreButton(
                       text: '내 관심태그 전체 보기',
-                      isRightFlow: true,
                     ),
                   ],
                 ),
@@ -330,7 +328,6 @@ class _TownScreenState extends State<TownScreen> {
                     /// 더보기 버튼
                     const MoreButton(
                       text: '트렌드 더보기',
-                      isRightFlow: false,
                     ),
                     const SizedBox(
                       height: 10,
@@ -516,7 +513,6 @@ class _TownScreenState extends State<TownScreen> {
                     ),
                     const MoreButton(
                       text: '랭킹 더보기',
-                      isRightFlow: true,
                     ),
                   ],
                 ),
