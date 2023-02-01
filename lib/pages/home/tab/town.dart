@@ -13,6 +13,7 @@ class TownScreen extends StatefulWidget {
 class _TownScreenState extends State<TownScreen> {
   @override
   Widget build(BuildContext context) {
+
     return SingleChildScrollView(
       child: Container(
           color: Colors.black12,
@@ -165,7 +166,7 @@ class _TownScreenState extends State<TownScreen> {
                 ),
               ),
 
-              ///오늘의 인기플레이 영역
+              ///오늘의 인기플레이 영역 -
               Container(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 20),
                 margin: EdgeInsets.only(bottom: 10),
@@ -248,7 +249,7 @@ class _TownScreenState extends State<TownScreen> {
                 ),
               ),
 
-              ///태그추천 영역
+              ///태그추천 영역 -
               Container(
                 padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
                 margin: EdgeInsets.only(bottom: 10),
@@ -298,7 +299,7 @@ class _TownScreenState extends State<TownScreen> {
                 ),
               ),
 
-              ///마켓 영역
+              ///마켓 영역 -
               Container(
                 color: Colors.white,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -352,59 +353,63 @@ class _TownScreenState extends State<TownScreen> {
                         style: TextStyle(fontSize: 25),
                       ),
                     ),
-                    Row(
-                      children: [
-                        // 인플루언서 영역
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 100,
-                              height: 100,
-                              // margin: EdgeInsets.only(right: 15),
-                              alignment: Alignment.center,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(50.0),
-                                child: Image.network(
-                                    'https://avatars.githubusercontent.com/u/56524770?v=4',
-                                    fit: BoxFit.fill),
-                              ),
-                            ),
-                            Text('콜리포터'),
-                            Container(
-                              width: 60,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                color: Colors.lightBlueAccent,
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                  '팔로우',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(color: Colors.white),
+                    Container(
+                      height: 160,
+                      child: Row(
+                        children: [
+                          // 인플루언서 영역
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 80,
+                                height: 80,
+                                // margin: EdgeInsets.only(right: 15),
+                                alignment: Alignment.center,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(50.0),
+                                  child: Image.network(
+                                      'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                      fit: BoxFit.fill),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          width: 15,
-                        ),
-                        Container(
-                          width: 130,
-                          height: 130,
-                          margin: EdgeInsets.symmetric(horizontal: 5),
-
-                          ///todo  왼쪽 컨텐츠 사이즈에 딱 맞게!
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10.0),
-                            child: Image.network(
-                                'https://image.yes24.com/images/chyes24/8/2/2/1/8221e0a47866a34b9126ac84c27d10b4.jpg', fit: BoxFit.cover,),
+                              /// 중간에 expend 넣는 방법!
+                              Expanded(child: Center(child: Text('콜리포터'))),
+                              Container(
+                                width: 60,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                  color: Colors.lightBlueAccent,
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: const Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text(
+                                    '팔로우',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            width: 160,
+                            height: 160,
+                            margin: EdgeInsets.symmetric(horizontal: 5),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10.0),
+                              child: Image.network(
+                                'https://image.yes24.com/images/chyes24/8/2/2/1/8221e0a47866a34b9126ac84c27d10b4.jpg',
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
