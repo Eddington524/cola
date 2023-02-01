@@ -1,4 +1,5 @@
 import 'package:cola/widget/gridview_page.dart';
+import 'package:cola/widget/item_title_row.dart';
 import 'package:cola/widget/more_button.dart';
 import 'package:cola/widget/trend_item.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,6 @@ class TownScreen extends StatefulWidget {
 class _TownScreenState extends State<TownScreen> {
   @override
   Widget build(BuildContext context) {
-
     return SingleChildScrollView(
       child: Container(
           color: Colors.black12,
@@ -175,25 +175,11 @@ class _TownScreenState extends State<TownScreen> {
                 color: Colors.white,
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                      child: Row(
-                        children: const [
-                          Text(
-                            '오늘의',
-                            style: TextStyle(fontSize: 25),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            '인기플레이',
-                            style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.w600),
-                          ),
-                        ],
-                      ),
-                    ),
+                    const ItemTitle(
+                        firstText: '오늘의 ',
+                        firstIsBold: false,
+                        secondText: '인기 플레이',
+                        secondIsBold: true),
                     Row(
                       children: [
                         ///인기 플레이 카드!
@@ -258,22 +244,11 @@ class _TownScreenState extends State<TownScreen> {
                 color: Colors.white,
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                      child: Row(
-                        children: const [
-                          Text(
-                            '픽사',
-                            style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.w600),
-                          ),
-                          Text(
-                            '를 좋아하는 당신을 위한 추천 태그',
-                            style: TextStyle(fontSize: 25),
-                          ),
-                        ],
-                      ),
-                    ),
+                    const ItemTitle(
+                        firstText: '픽사',
+                        firstIsBold: true,
+                        secondText: '를 좋아하는 당신을 위한 추천 태그',
+                        secondIsBold: false),
                     Row(
                       children: [
                         ///태그 카드!
@@ -342,19 +317,17 @@ class _TownScreenState extends State<TownScreen> {
               /// 소식 -
               Container(
                 color: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20),
                 margin: const EdgeInsets.only(bottom: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    /// text 묶음
-                    const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5),
-                      child: Text(
-                        '콜리포터가 전하는 소식',
-                        style: TextStyle(fontSize: 25),
-                      ),
-                    ),
+                    const ItemTitle(
+                        firstText: '콜리포터가 전하는 소식',
+                        firstIsBold: false,
+                        secondText: '',
+                        secondIsBold: false),
                     Container(
                       height: 160,
                       child: Row(
@@ -375,6 +348,7 @@ class _TownScreenState extends State<TownScreen> {
                                       fit: BoxFit.fill),
                                 ),
                               ),
+
                               /// 중간에 expend 넣는 방법!
                               Expanded(child: Center(child: Text('콜리포터'))),
                               Container(
@@ -419,36 +393,23 @@ class _TownScreenState extends State<TownScreen> {
 
               /// 경매상품 영역 -
               Container(
-                // padding: EdgeInsets.fromLTRB(20, 0, 0, 20),
-                // padding: EdgeInsets.only(left: 20, bottom: 20),
+                padding: EdgeInsets.only(left: 20, bottom: 20, right: 20),
                 margin: EdgeInsets.only(bottom: 10),
                 color: Colors.white,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-                      child: Row(
-                        children: const [
-                          Text(
-                            '유저들이 함께하는',
-                            style: TextStyle(fontSize: 25),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            '경매 상품',
-                            style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.w600),
-                          ),
-                        ],
-                      ),
-                    ),
+                    const ItemTitle(
+                        firstText: "유저들이 함께하는 ",
+                        firstIsBold: false,
+                        secondText: '경매 상품',
+                        secondIsBold: true),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: const [
                           AuctionItem(),
+
                           /// 카드!
                         ],
                       ),
@@ -573,22 +534,11 @@ class _TownScreenState extends State<TownScreen> {
                 color: Colors.white,
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                      child: Row(
-                        children: const [
-                          Text(
-                            '콜리샵 ',
-                            style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.w600),
-                          ),
-                          Text(
-                            '기획전',
-                            style: TextStyle(fontSize: 25),
-                          ),
-                        ],
-                      ),
-                    ),
+                    const ItemTitle(
+                        firstText: '콜리샵 ',
+                        firstIsBold: true,
+                        secondText: '기획전',
+                        secondIsBold: false),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
