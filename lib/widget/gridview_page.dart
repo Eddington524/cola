@@ -11,6 +11,11 @@ class _GridviewPageState extends State<GridviewPage> {
   final List<String> imgArr = [
     'https://m.duckyworld.co.kr/file_data/duckyworldadmin/2020/11/04/28088774d98306cd0f24dd860067391d.jpeg',
     'https://sitem.ssgcdn.com/43/88/53/item/1000507538843_i1_500.jpg',
+    'https://sitem.ssgcdn.com/43/88/53/item/1000507538843_i1_500.jpg',
+    'https://sitem.ssgcdn.com/43/88/53/item/1000507538843_i1_500.jpg',
+    'https://sitem.ssgcdn.com/43/88/53/item/1000507538843_i1_500.jpg',
+    'https://sitem.ssgcdn.com/43/88/53/item/1000507538843_i1_500.jpg',
+    'https://sitem.ssgcdn.com/43/88/53/item/1000507538843_i1_500.jpg',
     'http://openimage.interpark.com/goods_image_big/8/8/0/3/8106938803_l.jpg',
     'https://img.insight.co.kr/static/2021/06/10/700/img_20210610144321_up1e82g9.webp'
   ];
@@ -19,10 +24,11 @@ class _GridviewPageState extends State<GridviewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GridView.builder(
-        itemCount: 4,
+        itemCount: imgArr.length,
+        scrollDirection: Axis.horizontal,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 1 / 1,
+            // childAspectRatio: 1 / 1,
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
         ),
