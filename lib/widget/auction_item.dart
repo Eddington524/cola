@@ -35,7 +35,7 @@ class AuctionItem extends StatelessWidget {
                     child: const Text(
                       '18',
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.black26),
+                      style: TextStyle(color: Colors.black38),
                     ),
                   ),
                 ],

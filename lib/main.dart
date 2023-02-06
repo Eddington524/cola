@@ -3,6 +3,7 @@ import 'package:cola/pages/alarm/alarm.dart';
 import 'package:cola/pages/home/home.dart';
 import 'package:cola/pages/land/land.dart';
 import 'package:cola/pages/myinfo/my_info.dart';
+import 'package:cola/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
+      theme: themeDate,
         // This is the theme of your application.
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
@@ -26,8 +27,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
+        // primarySwatch: Colors.blue,
       home: const MainPage(),
     );
   }

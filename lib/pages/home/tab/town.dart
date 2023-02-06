@@ -1,12 +1,15 @@
-import 'package:cola/widget/Section.dart';
+import 'package:cola/theme/app_theme.dart';
+import 'package:cola/theme/custom_color.dart';
+import 'package:cola/widget/section.dart';
 import 'package:cola/widget/gridview_page.dart';
 import 'package:cola/widget/item_image.dart';
 import 'package:cola/widget/item_title_row.dart';
 import 'package:cola/widget/more_button.dart';
+import 'package:cola/widget/box.dart';
 import 'package:cola/widget/trend_item.dart';
 import 'package:flutter/material.dart';
 
-import '../../../widget/action_item.dart';
+import '../../../widget/auction_item.dart';
 
 class TownScreen extends StatefulWidget {
   const TownScreen({Key? key}) : super(key: key);
@@ -276,7 +279,9 @@ class _TownScreenState extends State<TownScreen> {
                       ),
                     ),
                     SizedBox(height: 400, child: GridviewPage()),
-                    /// 더보기 버튼
+                    const SizedBox(
+                      height: 10,
+                    ),
                     const MoreButton(
                       text: '트렌드 더보기',
                     ),
@@ -313,23 +318,14 @@ class _TownScreenState extends State<TownScreen> {
                               ),
 
                               /// 중간에 expend 넣는 방법!
-                              Expanded(child: Center(child: Text('콜리포터'))),
-                              Container(
-                                width: 60,
-                                height: 30,
-                                decoration: BoxDecoration(
-                                  color: Colors.lightBlueAccent,
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text(
-                                    '팔로우',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ),
-                              ),
+                              const Expanded(
+                                  child: Center(child: Text('콜리포터'))),
+                              Box(
+                                  w: 60,
+                                  h: 30,
+                                  bgColor: CustomColors().mainBlue,
+                                  textColor: Colors.white,
+                                  text: '팔로우'),
                             ],
                           ),
                           const SizedBox(
@@ -694,45 +690,21 @@ class _TownScreenState extends State<TownScreen> {
                               ),
                               Row(
                                 children: [
-                                  Container(
-                                    width: 15,
-                                    height: 15,
-                                    decoration: BoxDecoration(
-                                      color: Colors.redAccent,
-                                      borderRadius: BorderRadius.circular(4.0),
-                                    ),
-                                    child: const Text(
-                                      'N',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                  Container(
-                                      width: 65,
-                                      height: 15,
-                                      decoration: BoxDecoration(
-                                        color: Colors.lightBlueAccent,
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
-                                      child: const Text(
-                                        'only 콜리',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.white),
-                                      )),
-                                  Container(
-                                    width: 65,
-                                    height: 15,
-                                    decoration: BoxDecoration(
-                                      color: Colors.grey.withOpacity(0.2),
-                                      borderRadius: BorderRadius.circular(4.0),
-                                    ),
-                                    child: const Text(
-                                      '사전예약',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(color: Colors.black38),
-                                    ),
-                                  ),
+                                  Box(
+                                      w: 20,
+                                      h: 20,
+                                      bgColor: CustomColors().boxRed,
+                                      text: 'N',
+                                      textColor: Colors.white,
+                                      borderRadius: 4.0),
+                                  Box(
+                                      w: 70,
+                                      h: 20,
+                                      bgColor: CustomColors().mainBlue,
+                                      text: 'only 콜리',
+                                      textColor: Colors.white,
+                                      borderRadius: 4.0),
+                                  Box(w: 65, h: 20, bgColor: CustomColors().boxGrey, text: '사전예약', textColor: CustomColors().darkGrey)
                                 ],
                               ),
                             ],
