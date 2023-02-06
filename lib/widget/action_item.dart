@@ -1,3 +1,4 @@
+import 'package:cola/widget/item_image.dart';
 import 'package:flutter/material.dart';
 
 class AuctionItem extends StatelessWidget {
@@ -8,21 +9,12 @@ class AuctionItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(45),
-          ),
-          child: SizedBox(
+        const ItemImage(
+            isCicle: false,
             width: 280,
             height: 150,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10.0),
-              child: Image.network(
-                  'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.theqoo.net%2Fimg%2FHbqyL.jpg&type=sc960_832',
-                  fit: BoxFit.cover),
-            ),
-          ),
-        ),
+            imgUrl:
+                'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.theqoo.net%2Fimg%2FHbqyL.jpg&type=sc960_832'),
         const Text(
           '쿠로미 볼 빵빵 인형',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),

@@ -25,29 +25,31 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          title: Container(
-              width: 350,
-              height: 50,
-              padding: EdgeInsets.only(left: 20),
-              decoration: BoxDecoration(
-                color: Colors.black12,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Row(
-                children: const [
-                  Icon(Icons.search, size: 30),
-                  Expanded(
-                      child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: TextField(
-                      decoration: InputDecoration(
-                          hintText: "검색어를 입력해주세요", border: InputBorder.none),
-                    ),
-                  )),
-                ],
-              ))),
+        elevation: 0,
+        backgroundColor: Colors.white,
+        title: Container(
+          width: 350,
+          height: 50,
+          padding: EdgeInsets.only(left: 20),
+          decoration: BoxDecoration(
+            color: Colors.black12,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            children: const [
+              Icon(Icons.search, size: 30),
+              Expanded(
+                  child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: TextField(
+                  decoration: InputDecoration(
+                      hintText: "검색어를 입력해주세요", border: InputBorder.none),
+                ),
+              )),
+            ],
+          ),
+        ),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[

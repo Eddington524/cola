@@ -2,36 +2,31 @@ import 'package:flutter/material.dart';
 
 class ItemTitle extends StatelessWidget {
   final String firstText;
-  final bool firstIsBold;
-  final String secondText;
-  final bool secondIsBold;
+  final bool isFirstBold;
+  final String? secondText;
 
-  const ItemTitle(
-      {Key? key,
-      required this.firstText,
-      required this.firstIsBold,
-      required this.secondText,
-      required this.secondIsBold})
-      : super(key: key);
+  const ItemTitle({
+    Key? key,
+    required this.firstText,
+    required this.isFirstBold,
+    this.secondText,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var testStyle = TextStyle(
+        fontSize: 25,
+        fontWeight: isFirstBold ? FontWeight.w600 : FontWeight.normal);
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 15),
       child: Row(
         children: [
-          Text(
-            '$firstText',
-            style: TextStyle(
-                fontSize: 25,
-                fontWeight: firstIsBold ? FontWeight.w600 : FontWeight.normal),
-          ),
-          Text(
-            '$secondText',
-            style: TextStyle(
-                fontSize: 25,
-                fontWeight: secondIsBold ? FontWeight.w600 : FontWeight.normal),
-          ),
+          Text(firstText, style: testStyle),
+          Text(secondText ?? "",
+              style: testStyle.copyWith(
+                  fontWeight:
+                  isFirstBold ? FontWeight.normal : FontWeight.w600)),
         ],
       ),
     );

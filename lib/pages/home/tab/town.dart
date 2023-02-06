@@ -1,4 +1,6 @@
+import 'package:cola/widget/Section.dart';
 import 'package:cola/widget/gridview_page.dart';
+import 'package:cola/widget/item_image.dart';
 import 'package:cola/widget/item_title_row.dart';
 import 'package:cola/widget/more_button.dart';
 import 'package:cola/widget/trend_item.dart';
@@ -42,7 +44,7 @@ class _TownScreenState extends State<TownScreen> {
                                   borderRadius: BorderRadius.circular(10.0),
                                   child: Image.network(
                                       'https://d.line-scdn.net/stf/linecorp/ko/pr/Chef_Banner_ko.jpg',
-                                      fit: BoxFit.fill),
+                                      fit: BoxFit.cover),
                                 ),
                               ),
                               Align(
@@ -63,224 +65,195 @@ class _TownScreenState extends State<TownScreen> {
                   )),
 
               /// 트렌드 아이템 영역
-              Container(
-                color: Colors.white,
-                height: 750,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                margin: const EdgeInsets.only(bottom: 10),
-                child: Column(
-                  children: [
-                    /// text 묶음
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 5),
-                      child: Column(
+              Section(
+                  height: 755,
+                  child: Column(
+                    children: [
+                      /// text 묶음
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: const [
+                                Text(
+                                  "sam1",
+                                  style: TextStyle(
+                                      color: Colors.orange, fontSize: 25),
+                                ),
+                                Text("님을 위한", style: TextStyle(fontSize: 25))
+                              ],
+                            ),
+                            const Text('트렌드 아이템',
+                                style: TextStyle(
+                                    fontSize: 30, fontWeight: FontWeight.w600))
+                          ],
+                        ),
+                      ),
+                      Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            children: const [
-                              Text(
-                                "sam1",
-                                style: TextStyle(
-                                    color: Colors.orange, fontSize: 25),
-                              ),
-                              Text("님을 위한", style: TextStyle(fontSize: 25))
-                            ],
+                          /// 왼쪽열
+                          Expanded(
+                            flex: 1,
+                            child: Column(
+                              children: const [
+                                ///card
+                                TrendItem(
+                                  itemImgUrl:
+                                      'https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/8809559749901.jpg',
+                                  itemName: '꽝 없는 뽑기?!😃',
+                                  userImgUrl:
+                                      'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                  userName: 'eddy',
+                                  likeCount: 8,
+                                  commentCount: 10,
+                                ),
+                                TrendItem(
+                                  itemImgUrl:
+                                      'https://mblogthumb-phinf.pstatic.net/MjAyMjA1MzBfMjE3/MDAxNjUzOTEwOTMzNzgx.66CcW7EuR--tpmCqyvaFxE7bPaN4w4Why_IYDp1OP94g.JTg2pEvQIsDq0D_lqjUAvCweCPZMZGyCt_IG0JmV_00g.JPEG.dud8448/Screenshot%EF%BC%BF20220525%EF%BC%8D154010%EF%BC%BF10x10.jpg?type=w800',
+                                  itemName: '꽝 없는 뽑기?!😃',
+                                  userImgUrl:
+                                      'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                  userName: 'eddy',
+                                  likeCount: 8,
+                                  commentCount: 10,
+                                ),
+                              ],
+                            ),
                           ),
-                          const Text('트렌드 아이템',
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.w600))
+                          const SizedBox(
+                            width: 20,
+                          ),
+
+                          /// 오른쪽열
+                          Expanded(
+                            flex: 1,
+                            child: Column(
+                              children: const [
+                                ///card
+                                TrendItem(
+                                  itemImgUrl:
+                                      'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
+                                  itemName: '고흐의 컵',
+                                  userImgUrl:
+                                      'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
+                                  userName: 'pengpeng',
+                                  likeCount: 100,
+                                  commentCount: 20,
+                                ),
+                                TrendItem(
+                                  itemImgUrl:
+                                      'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
+                                  itemName: '고흐의 컵',
+                                  userImgUrl:
+                                      'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
+                                  userName: 'pengpeng',
+                                  likeCount: 100,
+                                  commentCount: 20,
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        /// 왼쪽열
-                        Expanded(
-                          flex: 1,
-                          child: Column(
-                            children: const [
-                              ///card
-                              TrendItem(
-                                itemImgUrl:
-                                    'https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/8809559749901.jpg',
-                                itemName: '꽝 없는 뽑기?!😃',
-                                userImgUrl:
-                                    'https://avatars.githubusercontent.com/u/56524770?v=4',
-                                userName: 'eddy',
-                                likeCount: 8,
-                                commentCount: 10,
-                              ),
-                              TrendItem(
-                                itemImgUrl:
-                                    'https://mblogthumb-phinf.pstatic.net/MjAyMjA1MzBfMjE3/MDAxNjUzOTEwOTMzNzgx.66CcW7EuR--tpmCqyvaFxE7bPaN4w4Why_IYDp1OP94g.JTg2pEvQIsDq0D_lqjUAvCweCPZMZGyCt_IG0JmV_00g.JPEG.dud8448/Screenshot%EF%BC%BF20220525%EF%BC%8D154010%EF%BC%BF10x10.jpg?type=w800',
-                                itemName: '꽝 없는 뽑기?!😃',
-                                userImgUrl:
-                                    'https://avatars.githubusercontent.com/u/56524770?v=4',
-                                userName: 'eddy',
-                                likeCount: 8,
-                                commentCount: 10,
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        ),
 
-                        /// 오른쪽열
-                        Expanded(
-                          flex: 1,
-                          child: Column(
-                            children: const [
-                              ///card
-                              TrendItem(
-                                itemImgUrl:
-                                    'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
-                                itemName: '고흐의 컵',
-                                userImgUrl:
-                                    'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
-                                userName: 'pengpeng',
-                                likeCount: 100,
-                                commentCount: 20,
-                              ),
-                              TrendItem(
-                                itemImgUrl:
-                                    'https://claboshop.com/web/product/extra/big/20200629/91c80f09258b07f9a99687f2b0863f1c.jpg',
-                                itemName: '고흐의 컵',
-                                userImgUrl:
-                                    'https://news.imaeil.com/photos/2019/11/11/2019111115511918075_m.jpg',
-                                userName: 'pengpeng',
-                                likeCount: 100,
-                                commentCount: 20,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-
-                    /// 더보기 버튼
-                    const MoreButton(
-                      text: '트렌드 더보기',
-                    )
-                  ],
-                ),
-              ),
+                      /// 더보기 버튼
+                      const MoreButton(
+                        text: '트렌드 더보기',
+                      )
+                    ],
+                  )),
 
               ///오늘의 인기플레이 영역 -
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 20),
-                margin: EdgeInsets.only(bottom: 10),
-                color: Colors.white,
-                child: Column(
-                  children: [
-                    const ItemTitle(
-                        firstText: '오늘의 ',
-                        firstIsBold: false,
-                        secondText: '인기 플레이',
-                        secondIsBold: true),
-                    Row(
-                      children: [
-                        ///인기 플레이 카드!
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(45),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomCenter,
-                            children: [
-                              SizedBox(
+              Section(
+                  child: Column(
+                children: [
+                  const ItemTitle(
+                    firstText: '오늘의 ',
+                    isFirstBold: false,
+                    secondText: '인기 플레이',
+                  ),
+                  Row(
+                    children: [
+                      ///인기 플레이 카드!
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(45),
+                        ),
+                        child: Stack(
+                          alignment: Alignment.bottomCenter,
+                          children: [
+                            const ItemImage(
                                 width: 90,
                                 height: 150,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  child: Image.network(
-                                      'https://w0.peakpx.com/wallpaper/954/59/HD-wallpaper-slam-dunk-10-anime-bastquetball-slam-dunk.jpg',
-                                      fit: BoxFit.fill),
+                                imgUrl:
+                                    'https://w0.peakpx.com/wallpaper/954/59/HD-wallpaper-slam-dunk-10-anime-bastquetball-slam-dunk.jpg',
+                                isCicle: false),
+                            Container(
+                              width: 40,
+                              height: 40,
+                              margin: const EdgeInsets.only(bottom: 10),
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                gradient: const LinearGradient(
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                  colors: [
+                                    Colors.lightBlueAccent,
+                                    Colors.orangeAccent,
+                                  ],
                                 ),
                               ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                margin: const EdgeInsets.only(bottom: 10),
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  gradient: const LinearGradient(
-                                    begin: Alignment.centerLeft,
-                                    end: Alignment.centerRight,
-                                    colors: [
-                                      Colors.lightBlueAccent,
-                                      Colors.orangeAccent,
-                                    ],
-                                  ),
-                                ),
-                                child: Container(
-                                  width: 30,
-                                  height: 30,
-                                  alignment: Alignment.center,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    child: Image.network(
-                                        'https://avatars.githubusercontent.com/u/56524770?v=4',
-                                        fit: BoxFit.fill),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                              child: const ItemImage( width: 30, imgUrl: 'https://avatars.githubusercontent.com/u/56524770?v=4', isCicle: true),
+                            ),
+                          ],
                         ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+                      ),
+                    ],
+                  )
+                ],
+              )),
 
               ///태그추천 영역 -
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
-                margin: EdgeInsets.only(bottom: 10),
-                color: Colors.white,
-                child: Column(
-                  children: [
-                    const ItemTitle(
-                        firstText: '픽사',
-                        firstIsBold: true,
-                        secondText: '를 좋아하는 당신을 위한 추천 태그',
-                        secondIsBold: false),
-                    Row(
-                      children: [
-                        ///태그 카드!
-                        Column(
-                          children: [
-                            SizedBox(
-                              width: 110,
-                              height: 110,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(10.0),
-                                child: Image.network(
-                                    'https://m.gundamworks.com/web/product/big/202206/146d25b1ae038985390e3b0bca7ffc93.jpg'),
-                              ),
+              Section(
+                  child: Column(
+                children: [
+                  const ItemTitle(
+                    firstText: '픽사',
+                    isFirstBold: true,
+                    secondText: '를 좋아하는 당신을 위한 추천 태그',
+                  ),
+                  Row(
+                    children: [
+                      ///태그 카드!
+                      Column(
+                        children: [
+                          SizedBox(
+                            width: 110,
+                            height: 110,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10.0),
+                              child: Image.network(
+                                  'https://m.gundamworks.com/web/product/big/202206/146d25b1ae038985390e3b0bca7ffc93.jpg'),
                             ),
-                            Text("우디"),
-                            Text('2341개의 게시글'),
-                          ],
-                        )
-                      ],
-                    ),
-                    const MoreButton(
-                      text: '내 관심태그 전체 보기',
-                    ),
-                  ],
-                ),
-              ),
+                          ),
+                          Text("우디"),
+                          Text('2341개의 게시글'),
+                        ],
+                      )
+                    ],
+                  ),
+                  const MoreButton(
+                    text: '내 관심태그 전체 보기',
+                  ),
+                ],
+              )),
 
               ///마켓 영역 -
-              Container(
-                color: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                margin: const EdgeInsets.only(bottom: 10),
+              Section(
                 child: Column(
                   children: [
                     /// text 묶음
@@ -315,20 +288,15 @@ class _TownScreenState extends State<TownScreen> {
               ),
 
               /// 소식 -
-              Container(
-                color: Colors.white,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
-                margin: const EdgeInsets.only(bottom: 10),
+              Section(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const ItemTitle(
-                        firstText: '콜리포터가 전하는 소식',
-                        firstIsBold: false,
-                        secondText: '',
-                        secondIsBold: false),
-                    Container(
+                      firstText: '콜리포터가 전하는 소식',
+                      isFirstBold: false,
+                    ),
+                    SizedBox(
                       height: 160,
                       child: Row(
                         children: [
@@ -336,17 +304,12 @@ class _TownScreenState extends State<TownScreen> {
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Container(
+                              const ItemImage(
                                 width: 80,
                                 height: 80,
-                                // margin: EdgeInsets.only(right: 15),
-                                alignment: Alignment.center,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(50.0),
-                                  child: Image.network(
-                                      'https://avatars.githubusercontent.com/u/56524770?v=4',
-                                      fit: BoxFit.fill),
-                                ),
+                                imgUrl:
+                                    'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                isCicle: true,
                               ),
 
                               /// 중간에 expend 넣는 방법!
@@ -392,18 +355,15 @@ class _TownScreenState extends State<TownScreen> {
               ),
 
               /// 경매상품 영역 -
-              Container(
-                padding: EdgeInsets.only(left: 20, bottom: 20, right: 20),
-                margin: EdgeInsets.only(bottom: 10),
-                color: Colors.white,
+              Section(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const ItemTitle(
-                        firstText: "유저들이 함께하는 ",
-                        firstIsBold: false,
-                        secondText: '경매 상품',
-                        secondIsBold: true),
+                      firstText: "유저들이 함께하는 ",
+                      isFirstBold: false,
+                      secondText: '경매 상품',
+                    ),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -414,16 +374,13 @@ class _TownScreenState extends State<TownScreen> {
                         ],
                       ),
                     ),
-                    MoreButton(text: "경매상품 더보기")
+                    const MoreButton(text: "경매상품 더보기")
                   ],
                 ),
               ),
 
               /// 데일리 아이템 랭킹 -
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 20),
-                margin: EdgeInsets.only(bottom: 10),
-                color: Colors.white,
+              Section(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -443,15 +400,14 @@ class _TownScreenState extends State<TownScreen> {
                             Stack(
                               alignment: Alignment.topLeft,
                               children: [
-                                Container(
-                                  width: 230,
-                                  height: 230,
-                                  margin: EdgeInsets.only(top: 30),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    child: Image.network(
+                                Transform.translate(
+                                  offset: const Offset(0, 30),
+                                  child: const ItemImage(
+                                    isCicle: false,
+                                    width: 230,
+                                    height: 230,
+                                    imgUrl:
                                         'https://dimg.donga.com/wps/NEWS/IMAGE/2022/12/29/117210753.1.edit.jpg',
-                                        fit: BoxFit.cover),
                                   ),
                                 ),
                                 Transform.rotate(
@@ -478,30 +434,25 @@ class _TownScreenState extends State<TownScreen> {
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
+                              padding:
+                                  const EdgeInsets.only(left: 10, bottom: 10),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const SizedBox(height: 10),
+                                  const SizedBox(height: 40),
                                   const Text("슬램덩크 북산 포스터",
                                       style: TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.w600)),
                                   const SizedBox(height: 10),
                                   Row(
-                                    children: [
-                                      Container(
-                                        width: 30,
-                                        height: 30,
-                                        alignment: Alignment.center,
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(50.0),
-                                          child: Image.network(
+                                    children: const [
+                                      ItemImage(
+                                          width: 30,
+                                          height: 30,
+                                          imgUrl:
                                               'https://avatars.githubusercontent.com/u/56524770?v=4',
-                                              fit: BoxFit.fill),
-                                        ),
-                                      ),
+                                          isCicle: true),
                                       SizedBox(width: 7),
                                       Text('backho')
                                     ],
@@ -528,37 +479,23 @@ class _TownScreenState extends State<TownScreen> {
               ),
 
               /// 기획전 영역
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 20),
-                margin: EdgeInsets.only(bottom: 10),
-                color: Colors.white,
+              Section(
                 child: Column(
                   children: [
                     const ItemTitle(
-                        firstText: '콜리샵 ',
-                        firstIsBold: true,
-                        secondText: '기획전',
-                        secondIsBold: false),
+                      firstText: '콜리샵 ',
+                      isFirstBold: true,
+                      secondText: '기획전',
+                    ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Stack(
                           children: [
-                            Container(
-                              margin: EdgeInsets.only(bottom: 10),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(45),
-                              ),
-                              child: SizedBox(
-                                width: 390,
-                                height: 410,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  child: Image.network(
-                                      'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.theqoo.net%2Fimg%2FHbqyL.jpg&type=sc960_832',
-                                      fit: BoxFit.cover),
-                                ),
-                              ),
+                            const ItemImage(
+                              imgUrl:
+                                  'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.theqoo.net%2Fimg%2FHbqyL.jpg&type=sc960_832',
+                              isCicle: false,
                             ),
 
                             /// 타이머 영역
@@ -806,7 +743,7 @@ class _TownScreenState extends State<TownScreen> {
                     MoreButton(text: "경매상품 더보기")
                   ],
                 ),
-              )
+              ),
             ],
           )),
     );
