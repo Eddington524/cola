@@ -1,3 +1,4 @@
+import 'package:cola/widget/item_image.dart';
 import 'package:flutter/material.dart';
 
 class GridviewPage extends StatefulWidget {
@@ -27,10 +28,10 @@ class _GridviewPageState extends State<GridviewPage> {
         itemCount: imgArr.length,
         scrollDirection: Axis.horizontal,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            // childAspectRatio: 1 / 1,
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10,
+          crossAxisCount: 2,
+          // childAspectRatio: 1 / 1,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
         ),
         itemBuilder: (BuildContext context, int index) {
           return Container(
@@ -40,34 +41,21 @@ class _GridviewPageState extends State<GridviewPage> {
             child: Stack(
               alignment: Alignment.bottomLeft,
               children: [
-                SizedBox(
-                  width: 300,
-                  height: 300,
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15.0),
-                        child: Image.network(imgArr[index], fit: BoxFit.cover)
-                    )
-                ),
+                ItemImage(width: 300, imgUrl: imgArr[index], isCicle: false),
                 Container(
                   width: 40,
                   height: 40,
-                  margin: const EdgeInsets.fromLTRB(10, 0, 0, 10),
+                  margin: const EdgeInsets.only(left: 10, bottom: 10),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50.0),
                     color: Colors.white,
                   ),
-                  child: Container(
-                    width: 35,
-                    height: 35,
-                    alignment: Alignment.center,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(50.0),
-                      child: Image.network(
+                  child: const ItemImage(
+                      width: 35,
+                      imgUrl:
                           'https://avatars.githubusercontent.com/u/56524770?v=4',
-                          fit: BoxFit.fill),
-                    ),
-                  ),
+                      isCicle: true),
                 ),
               ],
             ),

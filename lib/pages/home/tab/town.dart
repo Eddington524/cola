@@ -207,7 +207,11 @@ class _TownScreenState extends State<TownScreen> {
                                   ],
                                 ),
                               ),
-                              child: const ItemImage( width: 30, imgUrl: 'https://avatars.githubusercontent.com/u/56524770?v=4', isCicle: true),
+                              child: const ItemImage(
+                                  width: 30,
+                                  imgUrl:
+                                      'https://avatars.githubusercontent.com/u/56524770?v=4',
+                                  isCicle: true),
                             ),
                           ],
                         ),
@@ -230,15 +234,12 @@ class _TownScreenState extends State<TownScreen> {
                     children: [
                       ///태그 카드!
                       Column(
-                        children: [
-                          SizedBox(
+                        children: const [
+                          ItemImage(
                             width: 110,
-                            height: 110,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10.0),
-                              child: Image.network(
-                                  'https://m.gundamworks.com/web/product/big/202206/146d25b1ae038985390e3b0bca7ffc93.jpg'),
-                            ),
+                            imgUrl:
+                                'https://m.gundamworks.com/web/product/big/202206/146d25b1ae038985390e3b0bca7ffc93.jpg',
+                            isCicle: false,
                           ),
                           Text("우디"),
                           Text('2341개의 게시글'),
@@ -274,8 +275,7 @@ class _TownScreenState extends State<TownScreen> {
                         ],
                       ),
                     ),
-                    Container(height: 400, child: GridviewPage()),
-
+                    SizedBox(height: 400, child: GridviewPage()),
                     /// 더보기 버튼
                     const MoreButton(
                       text: '트렌드 더보기',
