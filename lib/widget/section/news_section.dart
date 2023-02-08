@@ -1,4 +1,5 @@
-import 'package:cola/widget/Section.dart';
+
+import 'package:cola/widget/section/section.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cola/theme/custom_color.dart';
