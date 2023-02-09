@@ -60,9 +60,6 @@ class _GridviewPageState extends State<GridviewPage> {
               ],
             ),
           );
-          // return Container(
-          //   child: Image.network(imgArr[index], fit: BoxFit.cover),
-          // );
         },
       ),
     );
