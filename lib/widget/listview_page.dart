@@ -28,14 +28,15 @@ class _ListViewPageState extends State<ListViewPage> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: ListView.separated(
-          separatorBuilder: (BuildContext context, int index) {
-            return const SizedBox(width: 10);
-          },
+        separatorBuilder: (BuildContext context, int index) {
+          return const SizedBox(width: 10);
+        },
         itemCount: imgArr.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, int index) {
+          // todo play item 으로 map 리팩토링
           return Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(45),
@@ -65,9 +66,7 @@ class _ListViewPageState extends State<ListViewPage> {
                     ),
                   ),
                   child: ItemImage(
-                      width: 30,
-                      imgUrl: profilArr[index],
-                      isCicle: true),
+                      width: 30, imgUrl: profilArr[index], isCicle: true),
                 ),
               ],
             ),
