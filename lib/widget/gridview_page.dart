@@ -10,15 +10,16 @@ class GridviewPage extends StatefulWidget {
 
 class _GridviewPageState extends State<GridviewPage> {
   final List<String> imgArr = [
-    'https://m.duckyworld.co.kr/file_data/duckyworldadmin/2020/11/04/28088774d98306cd0f24dd860067391d.jpeg',
-    'https://sitem.ssgcdn.com/43/88/53/item/1000507538843_i1_500.jpg',
-    'https://sitem.ssgcdn.com/43/88/53/item/1000507538843_i1_500.jpg',
-    'https://sitem.ssgcdn.com/43/88/53/item/1000507538843_i1_500.jpg',
-    'https://sitem.ssgcdn.com/43/88/53/item/1000507538843_i1_500.jpg',
-    'https://sitem.ssgcdn.com/43/88/53/item/1000507538843_i1_500.jpg',
-    'https://sitem.ssgcdn.com/43/88/53/item/1000507538843_i1_500.jpg',
-    'http://openimage.interpark.com/goods_image_big/8/8/0/3/8106938803_l.jpg',
-    'https://img.insight.co.kr/static/2021/06/10/700/img_20210610144321_up1e82g9.webp'
+    'https://mdl.artvee.com/ft/306637mil.jpg',
+    'https://mdl.artvee.com/ft/503052mab.jpg',
+    'https://mdl.artvee.com/ft/600716man.jpg',
+    'https://mdl.artvee.com/ft/403304mfg.jpg',
+    'https://mdl.artvee.com/ft/302383mil.jpg',
+    'https://mdl.artvee.com/ft/100741mpo.jpg',
+    'https://mdl.artvee.com/ft/100429mpo.jpg',
+    'https://mdl.artvee.com/ft/500430mab.jpg',
+    'https://mdl.artvee.com/ft/500430mab.jpg',
+    'https://mdl.artvee.com/ft/500430mab.jpg',
   ];
 
   @override
@@ -29,36 +30,55 @@ class _GridviewPageState extends State<GridviewPage> {
         scrollDirection: Axis.horizontal,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          // childAspectRatio: 1 / 1,
-          mainAxisSpacing: 10,
-          crossAxisSpacing: 10,
+          childAspectRatio: 1.2 / 1,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(45),
-            ),
-            child: Stack(
-              alignment: Alignment.bottomLeft,
-              children: [
-                ItemImage(width: 300, imgUrl: imgArr[index], isCicle: false),
-                Container(
-                  width: 40,
-                  height: 40,
-                  margin: const EdgeInsets.only(left: 10, bottom: 10),
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50.0),
-                    color: Colors.white,
+          return Column(
+            children: [
+              Stack(
+                alignment: Alignment.bottomLeft,
+                children: [
+                  ItemImage(
+                      width: 185,
+                      height: 185,
+                      imgUrl: imgArr[index],
+                      isCicle: false),
+                  Container(
+                    width: 40,
+                    height: 40,
+                    margin: const EdgeInsets.only(left: 10, bottom: 10),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50.0),
+                      color: Colors.white,
+                    ),
+                    child: const ItemImage(
+                        width: 35,
+                        imgUrl:
+                            'https://avatars.githubusercontent.com/u/56524770?v=4',
+                        isCicle: true),
                   ),
-                  child: const ItemImage(
-                      width: 35,
-                      imgUrl:
-                          'https://avatars.githubusercontent.com/u/56524770?v=4',
-                      isCicle: true),
-                ),
-              ],
-            ),
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: Text('스폰지밥 cgv'),
+                  ),
+                  SizedBox(
+                    width: 185,
+                    child: Row(
+                      children: [
+                        Text('택배거래'),
+                        Text(' 40,000원'),
+                      ],
+                    ),
+                  )
+                ],
+              )
+            ],
           );
         },
       ),

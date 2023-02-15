@@ -33,7 +33,7 @@ class _MarketSectionState extends State<MarketSection> {
             ],
           ),
         ),
-        SizedBox(height: 400, child: GridviewPage()),
+        SizedBox(height:470, child: GridviewPage()),
         const SizedBox(
           height: 10,
         ),
