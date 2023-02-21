@@ -28,8 +28,7 @@ class _ListViewPageState extends State<ListViewPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView.separated(
+    return ListView.separated(
         separatorBuilder: (BuildContext context, int index) {
           return const SizedBox(width: 10);
         },
@@ -72,7 +71,6 @@ class _ListViewPageState extends State<ListViewPage> {
             ),
           );
         },
-      ),
-    );
+      );
   }
 }

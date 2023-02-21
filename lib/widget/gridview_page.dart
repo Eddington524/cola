@@ -24,43 +24,44 @@ class _GridviewPageState extends State<GridviewPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GridView.builder(
-        itemCount: imgArr.length,
-        scrollDirection: Axis.horizontal,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 1.2 / 1,
-        ),
-        itemBuilder: (BuildContext context, int index) {
-          return Column(
-            children: [
-              Stack(
-                alignment: Alignment.bottomLeft,
-                children: [
-                  ItemImage(
-                      width: 185,
-                      height: 185,
-                      imgUrl: imgArr[index],
-                      isCicle: false),
-                  Container(
-                    width: 40,
-                    height: 40,
-                    margin: const EdgeInsets.only(left: 10, bottom: 10),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.0),
-                      color: Colors.white,
-                    ),
-                    child: const ItemImage(
-                        width: 35,
-                        imgUrl:
-                            'https://avatars.githubusercontent.com/u/56524770?v=4',
-                        isCicle: true),
+    return GridView.builder(
+      itemCount: imgArr.length,
+      scrollDirection: Axis.horizontal,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 1.2 / 1,
+      ),
+      itemBuilder: (BuildContext context, int index) {
+        return Column(
+          children: [
+            Stack(
+              alignment: Alignment.bottomLeft,
+              children: [
+                ItemImage(
+                    width: 185,
+                    height: 185,
+                    imgUrl: imgArr[index],
+                    isCicle: false),
+                Container(
+                  width: 40,
+                  height: 40,
+                  margin: const EdgeInsets.only(left: 10, bottom: 10),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50.0),
+                    color: Colors.white,
                   ),
-                ],
-              ),
-              Column(
+                  child: const ItemImage(
+                      width: 35,
+                      imgUrl:
+                          'https://avatars.githubusercontent.com/u/56524770?v=4',
+                      isCicle: true),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
@@ -68,7 +69,6 @@ class _GridviewPageState extends State<GridviewPage> {
                     child: Text('스폰지밥 cgv'),
                   ),
                   SizedBox(
-                    width: 185,
                     child: Row(
                       children: [
                         Text('택배거래'),
@@ -77,11 +77,11 @@ class _GridviewPageState extends State<GridviewPage> {
                     ),
                   )
                 ],
-              )
-            ],
-          );
-        },
-      ),
+              ),
+            )
+          ],
+        );
+      },
     );
   }
 }
