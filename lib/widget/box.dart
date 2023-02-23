@@ -6,21 +6,21 @@ class Box extends StatelessWidget {
   final Color bgColor;
   final Color textColor;
   final String text;
-  late final double? borderRadius;
+  late double? borderRadius;
 
   Box(
       {Key? key,
+      required this.text,
       required this.w,
       required this.h,
       required this.bgColor,
-      required this.text,
-      required this.textColor, this.borderRadius})
+      required this.textColor,
+      this.borderRadius})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
       width: w,
       height: h,
       decoration: BoxDecoration(
