@@ -1,4 +1,5 @@
 import 'package:cola/theme/custom_color.dart';
+import 'package:cola/widget/Box.dart';
 import 'package:cola/widget/item_image.dart';
 import 'package:flutter/material.dart';
 
@@ -17,21 +18,9 @@ class _AuctionListViewState extends State<AuctionListView> {
   ];
 
   final List<Map<String, dynamic>> itemInfoArr = [
-    {
-      'title': '볼 빵빵 쿠로미',
-      'price': 13000,
-      'count': 17
-    },
-    {
-      'title': '볼 빵빵 쿠로미',
-      'price': 15000,
-      'count': 23
-    },
-    {
-      'title': '볼 빵빵 쿠로미',
-      'price': 18000,
-      'count': 18
-    },
+    {'title': '볼 빵빵 쿠로미', 'price': 13000, 'count': 17},
+    {'title': '볼 빵빵 쿠로미', 'price': 15000, 'count': 23},
+    {'title': '볼 빵빵 쿠로미', 'price': 18000, 'count': 18},
   ];
 
   @override
@@ -79,19 +68,13 @@ class _AuctionListViewState extends State<AuctionListView> {
                           const SizedBox(
                             width: 5,
                           ),
-                          Container(
-                            width: 25,
-                            height: 20,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.2),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            child: Text(
-                              '$count',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(color: CustomColors().darkGrey),
-                            ),
-                          ),
+                          Box(
+                            text: '$count',
+                            w: 25,
+                            h: 20,
+                            bgColor: Colors.grey.withOpacity(0.2),
+                            textColor: CustomColors().darkGrey,
+                          )
                         ],
                       ),
                       Text(

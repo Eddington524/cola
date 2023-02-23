@@ -7,17 +7,20 @@ class MoreButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 400,
-      decoration: BoxDecoration(
-        color: Colors.black12,
-        borderRadius: BorderRadius.circular(45),
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 5),
+      height: 30,
+      child: ElevatedButton(
+        onPressed: () {},
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.white54,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
         child: Text(
           '$text',
-          style: TextStyle(fontSize: 13),
+          style: TextStyle(fontSize: 13, color: Colors.black54),
           textAlign: TextAlign.center,
         ),
       ),

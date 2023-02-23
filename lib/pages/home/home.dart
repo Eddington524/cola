@@ -13,8 +13,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late TabController _nestedTabController;
 
-  // _ private 변수 같은 클래스 내에서만 사용가능?
-
   @override
   void initState() {
     super.initState();
@@ -74,7 +72,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Expanded(
               child: TabBarView(
             controller: _nestedTabController,
-            children: const [TownScreen(), ItemScreen(), FollowScreen()],
+            children: [TownScreen(), ItemScreen(), FollowScreen()],
           ))
         ],
       ),

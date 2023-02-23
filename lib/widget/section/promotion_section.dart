@@ -1,9 +1,12 @@
 import 'package:cola/theme/custom_color.dart';
+import 'package:cola/widget/Box.dart';
+import 'package:cola/widget/Box.dart';
+import 'package:cola/widget/Box.dart';
 import 'package:cola/widget/section/section.dart';
 import 'package:cola/widget/more_button.dart';
 import 'package:cola/widget/timer.dart';
 import 'package:flutter/material.dart';
-import 'package:cola/widget/box.dart';
+import 'package:cola/widget/small_button.dart';
 import 'package:cola/widget/item_image.dart';
 import 'package:cola/widget/item_title_row.dart';
 
@@ -17,9 +20,10 @@ class PromotionSection extends StatefulWidget {
 class _PromotionSectionState extends State<PromotionSection> {
   @override
   Widget build(BuildContext context) {
-    return Section(child: Column(
+    return Section(
+        child: Column(
       children: [
-      ItemTitle(
+        ItemTitle(
           firstText: '콜리샵 ',
           isFirstBold: true,
           secondText: '기획전',
@@ -31,7 +35,7 @@ class _PromotionSectionState extends State<PromotionSection> {
               children: [
                 const ItemImage(
                   imgUrl:
-                  'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.theqoo.net%2Fimg%2FHbqyL.jpg&type=sc960_832',
+                      'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.theqoo.net%2Fimg%2FHbqyL.jpg&type=sc960_832',
                   isCicle: false,
                 ),
 
@@ -52,8 +56,7 @@ class _PromotionSectionState extends State<PromotionSection> {
                   Text('콜리'),
                   const Text(
                     '에스더버니 무드등 가습기',
-                    style: TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.w600),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                   // 가격행
                   Row(
@@ -65,14 +68,12 @@ class _PromotionSectionState extends State<PromotionSection> {
                               fontWeight: FontWeight.w600)),
                       Text("14,700원",
                           style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600)),
+                              fontSize: 20, fontWeight: FontWeight.w600)),
                       Text("21,000원",
                           style: TextStyle(
                               fontSize: 15,
                               color: Colors.black26,
-                              decoration:
-                              TextDecoration.lineThrough,
+                              decoration: TextDecoration.lineThrough,
                               fontWeight: FontWeight.w500))
                     ],
                   ),
@@ -92,7 +93,12 @@ class _PromotionSectionState extends State<PromotionSection> {
                           text: 'only 콜리',
                           textColor: Colors.white,
                           borderRadius: 4.0),
-                      Box(w: 65, h: 20, bgColor: CustomColors().boxGrey, text: '사전예약', textColor: CustomColors().darkGrey)
+                      Box(
+                          w: 65,
+                          h: 20,
+                          bgColor: CustomColors().boxGrey,
+                          text: '사전예약',
+                          textColor: CustomColors().darkGrey)
                     ],
                   ),
                 ],
@@ -104,4 +110,4 @@ class _PromotionSectionState extends State<PromotionSection> {
       ],
     ));
   }
-}   
+}

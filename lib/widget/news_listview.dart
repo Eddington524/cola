@@ -1,5 +1,5 @@
 import 'package:cola/theme/custom_color.dart';
-import 'package:cola/widget/box.dart';
+import 'package:cola/widget/small_button.dart';
 import 'package:cola/widget/item_image.dart';
 import 'package:flutter/material.dart';
 
@@ -49,8 +49,8 @@ class _NewsListViewState extends State<NewsListView> {
                           '콜리포터🪐',
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                         ))),
-                Box(
-                    w: 60,
+                Small_button(
+                    w: 70,
                     h: 30,
                     bgColor: CustomColors().mainBlue,
                     textColor: Colors.white,

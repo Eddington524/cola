@@ -3,7 +3,7 @@ import 'package:cola/widget/section/section.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cola/theme/custom_color.dart';
-import 'package:cola/widget/box.dart';
+import 'package:cola/widget/small_button.dart';
 import 'package:cola/widget/item_image.dart';
 import 'package:cola/widget/item_title_row.dart';
 

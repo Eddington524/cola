@@ -1,4 +1,4 @@
-import 'package:cola/model/model.dart';
+import 'package:cola/model/detail_item.dart';
 import 'package:cola/pages/detail/item_detail.dart';
 import 'package:cola/widget/item_image.dart';
 import 'package:flutter/material.dart';
@@ -91,7 +91,7 @@ class _RankListViewState extends State<RankListView> {
           detailContents[index],
           tags[index],
           detailImage[index]));
-
+// todo 객체 형태로
   late int count = 0;
   late int rankNum = 0;
 

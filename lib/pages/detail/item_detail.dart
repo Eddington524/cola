@@ -1,6 +1,6 @@
-import 'package:cola/model/model.dart';
+import 'package:cola/model/detail_item.dart';
 import 'package:cola/theme/custom_color.dart';
-import 'package:cola/widget/box.dart';
+import 'package:cola/widget/small_button.dart';
 import 'package:cola/widget/item_image.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
@@ -17,10 +17,20 @@ class ItemDetailPage extends StatefulWidget {
 class _ItemDetailPageState extends State<ItemDetailPage> {
 
   bool isMyLiked = false;
+  bool isFollowed = false;
+
+  void onClick() {
+    isFollowed=!isFollowed;
+    print(isFollowed);
+    setState(() {
+
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         appBar: AppBar(
           actions: [
             IconButton(onPressed: () {}, icon: Icon(Icons.bookmark_border)),
@@ -53,12 +63,24 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                         )
                       ],
                     ),
-                    Box(
-                        w: 50,
-                        h: 30,
-                        bgColor: CustomColors().lightOrange,
-                        text: '팔로우',
-                        textColor: Colors.white)
+                    Container(
+                      width: 70,
+                        height: 30,
+                      child: ElevatedButton(
+                        onPressed: onClick,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: isFollowed? CustomColors().lightOrange : Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                        child: Text(
+                            isFollowed? '팔로우': '팔로잉',
+                            style: TextStyle(
+                              color: isFollowed? Colors.white : Colors.black
+                            )),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -92,15 +114,15 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Box(
-                        w: 60,
+                    Small_button(
+                        w: 85,
                         h: 30,
                         bgColor: CustomColors().mainBlue,
                         text: '${widget.item.tags[0]}',
                         textColor: Colors.white),
                     SizedBox(width: 10,),
-                    Box(
-                        w: 60,
+                    Small_button(
+                        w: 80,
                         h: 30,
                         bgColor: CustomColors().mainBlue,
                         text: '${widget.item.tags[1]}',
