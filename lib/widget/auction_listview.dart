@@ -1,3 +1,4 @@
+import 'package:cola/repository/auction_repo.dart';
 import 'package:cola/theme/custom_color.dart';
 import 'package:cola/widget/Box.dart';
 import 'package:cola/widget/item_image.dart';
@@ -11,87 +12,79 @@ class AuctionListView extends StatefulWidget {
 }
 
 class _AuctionListViewState extends State<AuctionListView> {
-  final List<String> imgArr = [
-    'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.theqoo.net%2Fimg%2FHbqyL.jpg&type=sc960_832',
-    'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.theqoo.net%2Fimg%2FHbqyL.jpg&type=sc960_832',
-    'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.theqoo.net%2Fimg%2FHbqyL.jpg&type=sc960_832',
-  ];
-
-  final List<Map<String, dynamic>> itemInfoArr = [
-    {'title': '볼 빵빵 쿠로미', 'price': 13000, 'count': 17},
-    {'title': '볼 빵빵 쿠로미', 'price': 15000, 'count': 23},
-    {'title': '볼 빵빵 쿠로미', 'price': 18000, 'count': 18},
-  ];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView.separated(
-        separatorBuilder: (BuildContext context, int index) {
-          return const SizedBox(width: 10);
-        },
-        itemCount: imgArr.length,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, int index) {
-          int count = itemInfoArr[index]['count'];
-          int price = itemInfoArr[index]['price'];
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ItemImage(
-                isCicle: false,
-                width: 300,
-                height: 150,
-                imgUrl: imgArr[index],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                itemInfoArr[index]['title'],
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
+    return FutureBuilder(
+        future: AuctionRepo().loadData(),
+        builder: (context, snapshot) {
+          var list = snapshot.data ?? [];
+          return ListView.separated(
+            separatorBuilder: (BuildContext context, int index) {
+              return const SizedBox(width: 10);
+            },
+            itemCount: list.length,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, int index) {
+              var item = list[index];
+              var count = item.count;
+              var price = item.price;
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  ItemImage(
+                    isCicle: false,
+                    width: 300,
+                    height: 150,
+                    imgUrl: item.itemThumnail,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    item.itemTitle,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
                     children: [
-                      Row(
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
-                            height: 10,
+                          Row(
+                            children: [
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              const Text('입찰가'),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Box(
+                                text: '$count',
+                                w: 25,
+                                h: 20,
+                                bgColor: Colors.grey.withOpacity(0.2),
+                                textColor: CustomColors().darkGrey,
+                              )
+                            ],
                           ),
-                          const Text('입찰가'),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Box(
-                            text: '$count',
-                            w: 25,
-                            h: 20,
-                            bgColor: Colors.grey.withOpacity(0.2),
-                            textColor: CustomColors().darkGrey,
+                          Text(
+                            '$price원',
+                            style: TextStyle(
+                                color: CustomColors().mainBlue,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600),
                           )
                         ],
                       ),
-                      Text(
-                        '$price원',
-                        style: TextStyle(
-                            color: CustomColors().mainBlue,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600),
-                      )
                     ],
                   ),
                 ],
-              ),
-            ],
+              );
+            },
           );
-        },
-      ),
-    );
+        });
   }
 }

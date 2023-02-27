@@ -16,10 +16,4 @@ class Play {
   factory Play.fromJson(Map<String, dynamic> json) => _$PlayFromJson(json);
 
   Map<String, dynamic> toJson() => _$PlayToJson(this);
-  // Play.fromJson(Map<String, dynamic> json) {
-  //   id = json["id"];
-  //   mediaThumbnail =json["mediaThumbnail"];
-  //   userImg =json["userImg"];
-  //   mediaUrl =json["mediaUrl"];
-  // }
 }

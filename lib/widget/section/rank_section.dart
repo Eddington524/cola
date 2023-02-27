@@ -2,7 +2,6 @@ import 'package:cola/widget/rank_listview.dart';
 import 'package:cola/widget/section/section.dart';
 import 'package:flutter/material.dart';
 
-import 'package:cola/widget/item_image.dart';
 import 'package:cola/widget/more_button.dart';
 
 class RankSection extends StatefulWidget {
@@ -25,7 +24,7 @@ class _RankSectionState extends State<RankSection> {
           TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
         ),
         Text('매일 1~5위에게 보너스 포인트 지급!'),
-        SizedBox(height: 380, child: RankListView()),
+        SizedBox(height: 385, child: RankListView()),
         MoreButton(
           text: '랭킹 더보기',
         ),

@@ -1,24 +1,22 @@
 import 'dart:convert';
 
-import 'package:cola/model/play.dart';
+import 'package:cola/model/tag.dart';
 import 'package:http/http.dart';
-
 import 'dart:io';
 
-class PlayRepo {
+class TagRepo {
   String URL = Platform.isAndroid ? 'http://10.0.2.2:3000' : 'http://localhost:3000';
 
-  Future<List<Play>> loadData() async {
+  Future<List<Tag>> loadData() async{
     Client client = Client();
-    Uri url = Uri.parse('$URL/playlist');
+    Uri url = Uri.parse('$URL/taglist');
 
     var response = await client.get(url);
 
-    if (response.statusCode == 200) {
+    if(response.statusCode == 200){
       List<dynamic> body = jsonDecode(utf8.decode(response.bodyBytes));
-      List<Play> list = body.map((e) => Play.fromJson(e)).toList();
+      List<Tag> list = body.map((e) => Tag.fromJson(e)).toList();
       return list;
-      
     } else {
       return [];
     }

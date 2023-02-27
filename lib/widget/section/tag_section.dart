@@ -2,7 +2,6 @@ import 'package:cola/widget/section/section.dart';
 import 'package:cola/widget/tag_listview.dart';
 import 'package:flutter/material.dart';
 
-import 'package:cola/widget/item_image.dart';
 import 'package:cola/widget/item_title_row.dart';
 import 'package:cola/widget/more_button.dart';
 
@@ -19,9 +18,9 @@ class _TagSectionState extends State<TagSection> {
     return Section(child: Column(
       children: const [
         ItemTitle(
-          firstText: '픽사',
+          firstText: '동물',
           isFirstBold: true,
-          secondText: '를 좋아하는 당신을 위한 추천 태그',
+          secondText: '을 좋아하는 당신을 위한 추천',
         ),
         SizedBox(
           height: 160,

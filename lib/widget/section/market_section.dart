@@ -1,6 +1,6 @@
 import 'package:cola/widget/section/section.dart';
 import 'package:flutter/material.dart';
-import 'package:cola/widget/gridview_page.dart';
+import 'package:cola/widget/market_gridview_page.dart';
 import 'package:cola/widget/more_button.dart';
 
 class MarketSection extends StatefulWidget {

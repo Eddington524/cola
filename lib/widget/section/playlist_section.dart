@@ -1,5 +1,5 @@
-import 'package:cola/widget/item/play_item.dart';
-import 'package:cola/widget/listview_page.dart';
+import 'package:cola/repository/play_repo.dart';
+import 'package:cola/widget/play_listview_page.dart';
 import 'package:cola/widget/section/section.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +13,12 @@ class PlaylistSection extends StatefulWidget {
 }
 
 class _PlaylistSectionState extends State<PlaylistSection> {
+
+  @override
+  void initState() {
+    super.initState();
+    PlayRepo().loadData();
+  }
   @override
   Widget build(BuildContext context) {
     return Section(child: Column(

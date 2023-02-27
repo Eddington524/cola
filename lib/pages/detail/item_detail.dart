@@ -1,4 +1,4 @@
-import 'package:cola/model/detail_item.dart';
+import 'package:cola/model/rank.dart';
 import 'package:cola/theme/custom_color.dart';
 import 'package:cola/widget/small_button.dart';
 import 'package:cola/widget/item_image.dart';
@@ -8,7 +8,7 @@ import 'package:like_button/like_button.dart';
 class ItemDetailPage extends StatefulWidget {
   const ItemDetailPage({Key? key, required this.item}) : super(key: key);
 
-  final DetailItem item;
+  final Rank item;
 
   @override
   State<ItemDetailPage> createState() => _ItemDetailPageState();
@@ -51,14 +51,14 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                       children: [
                         ItemImage(
                             width: 50,
-                            imgUrl: widget.item.userImgUrl,
+                            imgUrl: widget.item.userImg,
                             isCicle: true),
                         SizedBox(width: 5,),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(widget.item.userName, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
-                            Text(widget.item.uploadDate,  style: TextStyle(fontSize: 10),)
+                            Text(widget.item.uploadDate.toString(),  style: TextStyle(fontSize: 10),)
                           ],
                         )
                       ],
@@ -84,7 +84,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                   ],
                 ),
               ),
-             Image.network(widget.item.detailImage, fit: BoxFit.contain,),
+             Image.network(widget.item.itemThumnail, fit: BoxFit.contain,),
               // ItemImage(imgUrl: widget.item.detailImage, isCicle: false),
               Row(
                 children: [
@@ -107,7 +107,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
               Text('${widget.item.itemTitle}', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text('${widget.item.detailContents}', style: TextStyle(fontSize: 15), textAlign: TextAlign.center,),
+                child: Text('${widget.item.content}', style: TextStyle(fontSize: 15), textAlign: TextAlign.center,),
               ),
               Padding(
                 padding: const EdgeInsets.all(20.0),
@@ -118,15 +118,9 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                         w: 85,
                         h: 30,
                         bgColor: CustomColors().mainBlue,
-                        text: '${widget.item.tags[0]}',
+                        text: '${widget.item.tag}',
                         textColor: Colors.white),
-                    SizedBox(width: 10,),
-                    Small_button(
-                        w: 80,
-                        h: 30,
-                        bgColor: CustomColors().mainBlue,
-                        text: '${widget.item.tags[1]}',
-                        textColor: Colors.white)
+                    SizedBox(width: 10),
                   ],
                 ),
               )
