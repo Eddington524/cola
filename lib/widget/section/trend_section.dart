@@ -19,7 +19,6 @@ class _TrendSectionState extends State<TrendSection> {
     return Section(
         child: Column(
       children: [
-        /// text 묶음
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 5),
           child: Column(

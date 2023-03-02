@@ -1,6 +1,8 @@
+import 'package:cola/pages/detail/item_detail.dart';
 import 'package:cola/repository/trend_repo.dart';
 import 'package:cola/widget/item/trend_item.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class TrendGridView extends StatelessWidget {
@@ -22,15 +24,26 @@ class TrendGridView extends StatelessWidget {
               mainAxisSpacing: 8,
               itemBuilder: (context, index) {
                 var item = list[index];
-                return TrendItem(
-                  itemImgUrl:
-                  item.itemThumnail,
-                  itemName: item.itemTitle,
-                  userImgUrl:
-                  item.userImg,
-                  userName: item.userName,
-                  likeCount: item.likeCount,
-                  commentCount: item.commentCount,
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ItemDetailPage(
+                          item: item,
+                        )));
+                  },
+                  child: Container(
+                    color: Colors.transparent,
+                    child: TrendItem(
+                      itemImgUrl:
+                      item.itemThumnail,
+                      itemName: item.itemTitle,
+                      userImgUrl:
+                      item.userImg,
+                      userName: item.userName,
+                      likeCount: item.likeCount,
+                      commentCount: item.commentCount,
+                    ),
+                  ),
                 );
               },
           );

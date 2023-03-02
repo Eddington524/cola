@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'rank.dart';
+part of 'item.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Rank _$RankFromJson(Map<String, dynamic> json) => Rank(
+Item _$ItemFromJson(Map<String, dynamic> json) => Item(
       json['itemThumnail'] as String,
       json['itemTitle'] as String,
       json['userImg'] as String,
@@ -14,11 +14,11 @@ Rank _$RankFromJson(Map<String, dynamic> json) => Rank(
       json['likeCount'] as int,
       json['commentCount'] as int,
       json['tag'] as String,
-      DateTime.parse(json['uploadDate'] as String),
       json['content'] as String,
+      DateTime.parse(json['uploadDate'] as String),
     );
 
-Map<String, dynamic> _$RankToJson(Rank instance) => <String, dynamic>{
+Map<String, dynamic> _$ItemToJson(Item instance) => <String, dynamic>{
       'itemThumnail': instance.itemThumnail,
       'itemTitle': instance.itemTitle,
       'userImg': instance.userImg,

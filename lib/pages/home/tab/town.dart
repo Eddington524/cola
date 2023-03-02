@@ -1,4 +1,4 @@
-import 'package:cola/widget/banner_slider.dart';
+import 'package:cola/widget/section/banner_section.dart';
 import 'package:cola/widget/section/auction_section.dart';
 import 'package:cola/widget/section/market_section.dart';
 import 'package:cola/widget/section/news_section.dart';

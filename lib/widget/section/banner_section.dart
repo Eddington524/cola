@@ -1,3 +1,4 @@
+import 'package:cola/pages/detail/banner_detail.dart';
 import 'package:cola/repository/banner_repo.dart';
 import 'package:cola/widget/indicator.dart';
 import 'package:flutter/material.dart';
@@ -37,35 +38,41 @@ class _BannerSliderViewState extends State<BannerSliderView> {
              scrollDirection: Axis.horizontal,
              controller: controller,
              itemBuilder: (context, index) {
+               var item = list[index];
                return Container(
                  padding: EdgeInsets.symmetric(horizontal: 20),
                  height: 180,
                  color: Colors.white,
-                 child: Stack(
-                   fit: StackFit.expand,
-                   children: [
-                     Container(
-                       margin: EdgeInsets.only(top: 10),
-                       child: ClipRRect(
-                         borderRadius: BorderRadius.circular(10.0),
-                         child: Image.network(list[index].imgUrl,
-                             fit: BoxFit.cover),
-                       ),
-                     ),
-                     Align(
-                       alignment: Alignment.topCenter,
-                       child: Container(
-                         width: 50,
-                         height: 20,
-                         color: Color.fromARGB(
-                           _random.nextInt(256),
-                           _random.nextInt(256),
-                           _random.nextInt(256),
-                           _random.nextInt(256),
+                 child: GestureDetector(
+                   onTap: (){
+                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => BannerDetail(id: item.id,)));
+                   },
+                   child: Stack(
+                     fit: StackFit.expand,
+                     children: [
+                       Container(
+                         margin: EdgeInsets.only(top: 10),
+                         child: ClipRRect(
+                           borderRadius: BorderRadius.circular(10.0),
+                           child: Image.network(list[index].imgUrl,
+                               fit: BoxFit.cover),
                          ),
                        ),
-                     )
-                   ],
+                       Align(
+                         alignment: Alignment.topCenter,
+                         child: Container(
+                           width: 50,
+                           height: 20,
+                           color: Color.fromARGB(
+                             _random.nextInt(256),
+                             _random.nextInt(256),
+                             _random.nextInt(256),
+                             _random.nextInt(256),
+                           ),
+                         ),
+                       )
+                     ],
+                   ),
                  ),
                );
              },
