@@ -6,7 +6,8 @@ import 'package:http/http.dart';
 import 'dart:io';
 
 class RankRepo {
-  String URL = Platform.isAndroid ? 'http://10.0.2.2:3000' : 'http://localhost:3000';
+  String URL =
+      Platform.isAndroid ? 'http://10.0.2.2:3000' : 'http://localhost:3000';
 
   Future<List<Item>> loadData() async {
     Client client = Client();
@@ -18,7 +19,7 @@ class RankRepo {
       List<dynamic> body = jsonDecode(utf8.decode(response.bodyBytes));
       List<Item> list = body.map((e) => Item.fromJson(e)).toList();
       return list;
-    }else{
+    } else {
       return [];
     }
   }

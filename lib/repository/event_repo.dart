@@ -7,8 +7,7 @@ import 'dart:io';
 class EventRepo {
   String URL = Platform.isAndroid ? 'http://10.0.2.2:3000' : 'http://localhost:3000';
 
-  Future<List<Event>> loadData(idx) async {
-    List<Event> eventInstance = [];
+  Future<Event> loadData(idx) async {
     Client client = Client();
     Uri url = Uri.parse('$URL/bannerlist/$idx');
 
@@ -16,9 +15,8 @@ class EventRepo {
 
     if(response.statusCode == 200) {
       dynamic body = jsonDecode(response.body);
-      eventInstance.add(Event.fromJson(body));
-
-      return eventInstance;
+        Event item = Event.fromJson(body);
+      return item;
     }
     else{
       throw HttpException('Failed to load event: ${response.statusCode}');
