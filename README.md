@@ -1,6 +1,6 @@
 # cola
 
-A new Flutter project.
+Flutter 스터디를 위한 프로젝트 입니다.
 
 ## Getting Started
 
