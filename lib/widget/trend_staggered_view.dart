@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class TrendGridView extends StatelessWidget {
-  const TrendGridView({Key? key}) : super(key: key);
+  final bool isTabView;
+  const TrendGridView({Key? key, required this.isTabView}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +15,9 @@ class TrendGridView extends StatelessWidget {
         future: TrendRepo().loadData(),
         builder: (context, snapshot) {
           var list = snapshot.data ?? [];
-          // print(snapshot.data);
           return MasonryGridView.count(
-              physics: const NeverScrollableScrollPhysics(),
+              physics: isTabView ? ScrollPhysics() : NeverScrollableScrollPhysics(),
+              scrollDirection: Axis.vertical,
               shrinkWrap: true,
               itemCount: list.length,
               crossAxisCount: 2,

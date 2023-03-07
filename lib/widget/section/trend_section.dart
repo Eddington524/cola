@@ -40,7 +40,7 @@ class _TrendSectionState extends State<TrendSection> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              TrendGridView(),
+              TrendGridView(isTabView: false,),
             ],
           ),
         ),

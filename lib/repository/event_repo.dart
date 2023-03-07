@@ -5,7 +5,8 @@ import 'package:http/http.dart';
 import 'dart:io';
 
 class EventRepo {
-  String URL = Platform.isAndroid ? 'http://10.0.2.2:3000' : 'http://localhost:3000';
+  String URL =
+      Platform.isAndroid ? 'http://10.0.2.2:3000' : 'http://localhost:3000';
 
   Future<Event> loadData(idx) async {
     Client client = Client();
@@ -13,12 +14,12 @@ class EventRepo {
 
     var response = await client.get(url);
 
-    if(response.statusCode == 200) {
-      dynamic body = jsonDecode(response.body);
-        Event item = Event.fromJson(body);
+    if (response.statusCode == 200) {
+      dynamic body = jsonDecode(utf8.decode(response.bodyBytes));
+      Event item = Event.fromJson(body);
+
       return item;
-    }
-    else{
+    } else {
       throw HttpException('Failed to load event: ${response.statusCode}');
     }
   }

@@ -40,7 +40,7 @@ class _BannerDetailState extends State<BannerDetail> {
 
               return Column(
                 children: [
-                  Image.network(item.detailImgUrl),
+                  // Image.network(item.detailImgUrl),
                   Container(
                     width: MediaQuery.of(context).size.width,
                     height: 400,

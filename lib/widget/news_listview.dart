@@ -34,7 +34,7 @@ class _NewsListViewState extends State<NewsListView> {
                       width: 90,
                       height: 90,
                       imgUrl:
-                      'https://avatars.githubusercontent.com/u/56524770?v=4',
+                      '터',
                       isCicle: true,
                     ),
 

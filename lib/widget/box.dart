@@ -27,10 +27,12 @@ class Box extends StatelessWidget {
         color: bgColor,
         borderRadius: BorderRadius.circular(borderRadius ?? 8.0),
       ),
-      child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: TextStyle(color: textColor),
+      child: Center(
+        child: Text(
+          text,
+          // textAlign: TextAlign.center,
+          style: TextStyle(color: textColor),
+        ),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:cola/pages/Auth/login.dart';
 import 'package:flutter/material.dart';
 
 class MyInfoPage extends StatefulWidget {
@@ -11,14 +12,15 @@ class _MyInfoPageState extends State<MyInfoPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        children: [
-Container(
-  color: Colors.black12,
-)
-        ],
-      ),
-      color: Colors.pinkAccent,
+      child: Login(),
+      // child: Column(
+      //   children: [
+      //     Container(
+      //       color: Colors.black12,
+      //     )
+      //   ],
+      // ),
+      // color: Colors.pinkAccent,
     );
   }
 }
